@@ -1,0 +1,376 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Devsisters QBR 2026 H1 최종본</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js">
+// Ad Type 차트 (YTD 전체)
+const atLabels = ['Image', 'Video', 'Native', 'Template'];
+const atRev    = [109100, 108199, 81740, 30637];
+const atRoas   = [1.18, 1.09, 1.00, 3.31];
+const atColors = ['rgba(238,255,83,.45)','rgba(61,220,132,.5)','rgba(210,200,255,.5)','rgba(232,200,74,.55)'];
+const atBorder = ['#eeff53','#3DDC84','#d2c8ff','#e8c84a'];
+new Chart(document.getElementById("adtype_chart"),{type:"bar",data:{labels:atLabels,datasets:[
+  {label:"Cost ($)",data:atRev,backgroundColor:atColors,borderColor:atBorder,borderWidth:1,yAxisID:"y"},
+  {type:"line",label:"AP ROAS",data:atRoas,borderColor:"#eeff53",backgroundColor:"transparent",borderWidth:2,pointRadius:5,pointBackgroundColor:"#eeff53",yAxisID:"y2"}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},
+  scales:{
+    x:{grid:{color:"#1a1a1a"},ticks:{color:"#555",font:{size:10}}},
+    y:{grid:{color:"#1e1e1e"},ticks:{color:"#777",callback:function(v){return"$"+v.toLocaleString()}},position:"left",beginAtZero:true},
+    y2:{grid:{display:false},ticks:{color:"#eeff53",font:{size:9},callback:function(v){return v+"x"}},position:"right",beginAtZero:true,max:6}
+  }
+}});
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Apple SD Gothic Neo',Arial,sans-serif;background:#1e1e1e;color:#f6f4f2;font-size:13px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:#1e1e1e;border-bottom:2px solid #eeff53}.header img{height:26px}.hdr-r{font-size:11px;color:#555}
+.wrap{padding:24px 32px 56px;max-width:1280px;margin:0 auto}
+.cover{background:linear-gradient(135deg,#141400 0%,#1e1e1e 100%);border:1px solid #2e2e2e;border-radius:10px;padding:26px 30px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end}
+.cover h1{font-size:25px;font-weight:900;color:#fff;margin-bottom:5px;letter-spacing:-.02em}.cover .sub{font-size:13px;color:#666}.cover-r{text-align:right}
+.pill{display:inline-block;background:#eeff53;color:#1e1e1e;font-size:10px;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:.07em;margin-bottom:7px}
+.cover-meta{font-size:11px;color:#555;line-height:2.1}
+.sec{background:#232323;border-radius:8px;padding:20px 24px;margin-bottom:18px}
+.sec-t{font-size:11px;font-weight:800;color:#eeff53;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.n{font-size:11px;background:#eeff53;color:#1e1e1e;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}
+.s4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.s3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.s2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:#181818;border-radius:7px;padding:13px 15px;border-bottom:3px solid #2a2a2a}.sl{font-size:10px;color:#444;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}.sv{font-size:19px;font-weight:900;line-height:1.1}.ss{font-size:10px;color:#3a3a3a;margin-top:3px;line-height:1.6}
+.b-gr{border-bottom-color:#1D9E75}.b-rd{border-bottom-color:#D85A30}.b-am{border-bottom-color:#e8c84a}.b-pu{border-bottom-color:#d2c8ff}
+.c-gr{color:#1D9E75}.c-rd{color:#D85A30}.c-yw{color:#e8c84a}.c-pu{color:#d2c8ff}
+.cw{background:#181818;border-radius:7px;padding:13px 15px;margin-bottom:12px}
+.cw-t{font-size:11px;font-weight:700;color:#777;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.leg{display:flex;gap:12px;font-size:10px;color:#555;flex-wrap:wrap;align-items:center}.ld{width:14px;height:2.5px;display:inline-block;vertical-align:middle;margin-right:3px;border-radius:1px}
+.ins{background:#181818;border-radius:7px;padding:13px 15px;font-size:12px;color:#999;line-height:1.9;border-left:3px solid #eeff53}.ins.w{border-left-color:#D85A30}.ins.g{border-left-color:#1D9E75}.ins strong{color:#f6f4f2}
+table{width:100%;border-collapse:collapse;font-size:12px}th{background:#141414;color:#444;font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:9px 10px;text-align:left;white-space:nowrap;border-bottom:1px solid #2a2a2a}td{padding:9px 10px;border-bottom:1px solid #1e1e1e;vertical-align:middle}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}.bg{background:rgba(29,158,117,.18);color:#1D9E75}.br{background:rgba(216,90,48,.18);color:#D85A30}.ba{background:rgba(232,200,74,.18);color:#e8c84a}.bp{background:rgba(210,200,255,.18);color:#d2c8ff}
+.src{display:inline-block;font-size:9px;padding:1px 6px;border-radius:3px;background:#081510;color:#1D9E75;border:1px solid #1D9E7530;margin-left:6px;vertical-align:middle}
+.note{font-size:10px;color:#333;margin-top:8px;font-style:italic}.tw{overflow-x:auto}.divider{height:1px;background:#252525;margin:12px 0}
+.p-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #1e1e1e}.p-row:last-child{border-bottom:none}
+.p-num{background:#eeff53;color:#1e1e1e;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;margin-top:1px}
+.p-body{flex:1}.p-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}.p-sub{font-size:11px;color:#555;line-height:1.7}
+.p-h{border-left:3px solid #D85A30;padding-left:10px}.p-m{border-left:3px solid #e8c84a;padding-left:10px}
+@media(max-width:700px){.s4,.s3{grid-template-columns:1fr 1fr}.s2{grid-template-columns:1fr}}
+</style></head><body>
+<div class="header"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdwAAAHCCAYAAAD1pgucAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAV5tJREFUeNrs3f9VG8faAODVd/J/uBVEqcCkAssVBFcQUUGgAuMKsCuAVGBSAXIFJhVYqSDcCvbbMaNrmWAQIO07s/s85+zB8c3NitnRzLzv/NimAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIByTBTBw9q2nXc/pkqiGIvv/P31ZDK5UjwAAAAAQAQJ9w20bXvZ/Zgpieqk5Pt1vv7KP7/8ncQ8AAAAALBtPygCBmx/7c8H6/9D27bpR0q6L5ubZHz689VkMlkqNgAAAADgKaxw34AV7qOSVsEvuutj+mklPAAAAACwKQn3DUi4j9oqAf9nc5OAXyoSAAAAAOAuEu4bkHBnTVrx/kd3XUi+AwAAAADr/k8RwKOkc+FPu+tz27afumveXXuKBQAAAACQcIenS8n3s+Ym+X7WXfuKBAAAAADGS8Idni+tcJ93V1rxftldM0UCAAAAAOMj4Q7bNeuuS4l3AAAAABgfCXfYjVkj8Q4AAAAAoyLhDrs1a24S72dergoAAAAAwybhDv2YNzcvVz1SFAAAAAAwTBLu0J+0wv00HzMzVRwAAAAAMCwS7tC/WXd9atv2QFEAAAAAwHBIuEOMtNr9Q9u2p4oCAAAAAIZBwh1iHbVt+8kLVQEAAACgfhLuEG+/u9K57vuKAgAAAADqJeEOZZB0BwAAAIDKSbhDOdKxMpLuAAAAAFApCXcoi6Q7AAAAAFRKwh3KI+kOAAAAABWScIcyrZLue4oCAAAAAOog4Q7lknQHAAAAgIpIuEPZ0rEyp4oBAAAAAMon4Q7lm7dtO1cMAAAAAFA2CXeow6mXqAIAAABA2X5QBMW66q5rxfBd03yNRTrH/ay7fvHoAQAAAKBMEu7lOp5MJgvFsJm2bafN1wT8rLt+bG7OP1//+9rtd7/nSVcvTjxxAAAAKNdaniLlJtIiulWe4rFmt/9i0lHCUC5f0M0aycu7GrgdeyXhvrXnt5c7tfQMX+SfexX/Sj93dWPpyQIAAEC8nFxPeYeXzdf8w85IuEPZrHBn8Lp+KB3Ns8jXqjNMHeBvuROs7Wz0dLTMK08WAAAAYlSeVwB2SMKdUZpMJumM/KvcSU67H79310FTx/Ezs+4zz+yAAAAAgP5UmD8AAvyfImDs0vEs3ZXOzP+5+8fDZm0lfMHOPDkAAADYvbZt5/m44c/dddRItgP3kHCHNZPJ5Ly70nEt6VoU/FGnqcP3xAAAAGA3cqI9JdnToreZEgE2IeEOd0jHteTE++vuWhb6Md94UgAAALBd6RjXtUT7VIkAjyHhDveYTCYX3Y9fuutdgR8vrXI/8JQAAADg+dIZ7d31oftjOj5mqkSAp5BwhwdMJpPrdMZ7c3PMzHVhH+93TwgAAACep23bdDb7p+bmhagATybhDhtKx8x0P9KLVa8K+lhpm9u+pwMAAACP18XUe3lV+2l37SkR4Lkk3OER0mr3prwXqlrlDgAAAI+UF7BZ1Q5slYQ7PFI+YiYl3c8L+UgGBgAAAPAIbdvOG2e1Azsg4Q5PNJlMDpsyjpfZ8/JUAAAA2ExOtp81jpABdkDCHZ4nrXQvIen+m0cBAAAA91tLtgPshIQ7PEM+0z2tdL8O/ihWuAMAAMA9JNuBPki4wzNNJpO0wv1tAQMHSXcAAAC4O2aeN5LtQA8k3GELJpPJu+7HIvhj/OpJAAAAwLfyAjXJdqAXEu6wPYfB9595BAAAAPBV27b7jWQ70CMJd9iSyWSybGKPlpl2A4mpJwEAAABfku17zU2yfU9pAH2RcIftSkfLRL5AdeYRAAAAwBen3bWvGIA+SbjDFk0mk5Rsfx/4EV56CgAAAIxdPrd9riSAvkm4w/adB97bzD0AAACjtnaUDEDvJNxhy/JZ7hdBt5dwBwAAYOyc2w6EkXCH3fgj6sZt284UPwAAAGOUY+IDJQFEkXCHHZhMJmmFe9TLU61yBwAAYKwcJQOEknCH3Yk6Vsa2OQAAAEanbdt592OqJIBIEu6wOx+D7vtS0QMAADAm+UWpb5QEEO0HRQA7swi6rxXu5Q4AZ/mP+3c8p9sTJVfd9d+1f77Of5cs88t5AYDn98/T5utqyNmt//mn5tuVkqk//uvWv7PMVzpWcKFEAcLMm/JWt6/iuNRP/B2cKxhzDD69o248FIOvPysxOI8yUQQbfUEv7xh879orA/ZB1J3PER1+V3d8t+OeeUqk7+c2YxWk76r9uMoDuI95AHfVPforTwEA7uyj93MfPc1B9nSH47RF8zW5ssh99LWnABTUHq4WAN21GOix8UhTQjsXFX/fktr+ixyjXUnSDi4GX+ZLDM69JOU2+/JKuPPUuvOhiXk7+n8Edb0941Vn/jL/jB7grVZQpAHAQjsCwIj76P08DnvZPC+htM0gfbHWRy89JWCHbeAqNknXi9wGznpq61bXatJx56uD89ntUS9LTb9bSrL/Ifnaewy+mkyPthCDs07CfbMvs4Q7T607J03MGXLqz+4Hr7/mIH5a+Me9zp3/n2kQaCIG2HKws34lPz2iXVwF4t8E55KQPKNO7uW++dc8di/9mL1U17+sguzq/YUnCDyj/Vut7k2J9VISkHdJcclqcdBWV393ZfAp4PdOv897bXhvdfy3XM/3K/jIFzkGN8E+UhLum32xJdx5at1J9eYy4Nbqz+46+HlT9zn5q45f8h14bH+2CuSnPQQ6qQ9LwclfOSDXp3Ff/Ux982oivFbXzdfVkeo7sElskvrl1S7bWuOTZfN1ZfCT45NcHp96/NzpM7/VXvcWg9ew0O0+aZLpvRh8XCTcN/uSS7jznA7iU8CtD7v6c+4JPPv5pYFrCuJ/r7yD/55zgT09toVe6HzfgKyw72H3zA7WgvhSVhGtB+S2a2tX9nP/fDDA9mWZ+ufUT1sVh376G6N+F8Ja31x78vHeZ5zbv4vHtH9d2ZzluG3XUv1LifZ3Wo6dxuAHuY/fH+CvKAYfS3ynCDb6wku485z60wbcNg0CTpT+k59ZGsC+6WnQVsrA9r1JGp7xfZnmfvLH5us5yftK5xEDsuCXXVd4FMdqNfCftnGPrs1JffNvAWNzgTk199OrI0ZWx37V2k+PLkYe+OTiJjHKRsn3rpz+6aF8Ut07NBG607bq96b+HeWbSvXobWPV+3DjO0Ww0Rdfwp3n1J8+Ov/bJNyf9qxmawPaMUqdftrqdq7T54HAL31Xat/CXNaALCjhntu93yoP5FN7dd7cTBwKgofb9qQAPE2GT0daBIvG8QXop0cRI49gl+1TrI7cuvhO/7Drl6W+6+597DHspL5Pm3EtdrtrHPs+1zEx+JDiO0WwUQMg4U5t9UfC/fGByWkzntVym3T6tkpy+zsyhPMTyx2Q9ZxwH3DycpED8nO1ajDtz1Dr6nPquMQ7Y+2nBx0jSzxuZNncrHr/X3KyK7cPzW4XTDmuVX3vKwaXeB+Q/1MEwJg7+XzeXzpnf6ZE/ietqjntyuZzPiuScX4/9lKiq7s+5e/IUSPhNYRnepJ3Xp0N9Hmmtvwst18CuLrr6yw9xwHX1efU8cuUYMrJCsbdph/l74l+uv72Li3SSs9S33W/VMdTkjb182e5HZRsr6/tOlXf74zBU93+ZAw7DBLuMEw/KYIHO/qTHJzozO4f0KaA/lJQP7pB8EkeBKdEl7PYh/Fcj/IzfdOM4xig1GZJvNdZV6d5teJlI3l4n5Rg+pwn0RztNb5+epWsOvU9qfpZrhLtETuia7c6dufzDu8h2b678eiR0nhwDHuZdy9RKQl32L2I7UAG3vcPbMeUdNqG2SqoVxSD/36cNONKyo6pzTsd6TMVtNTXBqXJcLurNrdaDTdTFIP/fqxPiB/pp6t+lqtdthLt5TqWbN9qnd/Pu2bHOh59agye+vdTE+t1knCH3ftLERQTpJw2Vsw9K6hPAyVJq0F+P0xEDbPNs0pY0FJbIK4Nepr0Hb9Uvwf9HUmTUL4jw+ibTxpHaZTu3LustlrvT3L7JYZ8mqPGxHqVJNyBUQTyzdezLXme/dzhnyiKwXw/TEQN75ke5GDeKmFBSw319Uggrn7z3e/HavL0g356EH3zatKEcl1117Fi2E4MvjaZzvOk9v8yx21UQsIdGHpHf5IHt4KU7XqTj2iwyqre78Y0D4JNRA3ruaaBeErM+G4+HLScKIrQurqXzy4WPKrf3P0dWS0YMXlaf1tn0qQe6dz2a8Xw7Hqf4ovUx5tM366jvONcW1IBCXdg6INbM+q7M2tuznafKYpqg3iD4OE8UxMoj7c6JsvkRP/19Uv/0Ti7eNf128R4vd+ReWP32ZDaOpMmdXg3mUyuFMOzY/D0fgJnte/Oase5dqVwEu6wey8D7rkceUdvRVB/0kDqMgeG1BPEfzIIHmSbZwLlaUHLZ++m6LW+rla9aYN2b5aDcvW7vn76zHek+ud4oq2rSlrV/lYxPKvOT3OdFxf2E4N/sJutbBLuMEx/j7ijP2isCIpwllczUEcQz7CeqYD++UGLicN+6utq1Rv9meb6bRGCfpp+nuHquCy7bOty7CiZZ9V7iz9ivBGDl0vCHRhakOLs4jjzdIyP7euCeHp/pr5zz5fK8EzSfWd1dZWAUr5x9fuD+q2fZufP8MuuqcZxWbVZTiaTc8XwrLbL7tnYGNwRiQWScAeG0tGfCVKK8GWHgQ6/yADQ92N4wY1nun2S7tuvq192EDQSUOo32vRhP8PVLltj4Pq8VwRPrvdH2q4i7IvByyPhDrsnwNx9R586eQGkDp+7vx/7OQBkOM90LrjZKUnJ7bc/tpiXVb+1H+V9TzyT+vtlu2zrlI6ROVcMT47BHRMnBuc7JNxhmJYj6+jnHrkOnzu/H3uNI0eG9kwlZvoh6b6duirZXqa5pHtR/bRJ8bqf4Vy/XHfc7Ox2MbgYnF2QcIfddkSzqIGDjh4dPs3NqhPJruG0eXYr9EvS/fl1VftfLkn3MlgVXXdbl/oI36PK4xVtoRhcDM4uSLjDbmnkdPQ6fB1+1HfkwHdkUM/TboUYpzl5zOZ1ddpIttdiblIp9LuSzj6eKYlqn9+8kWwfUlvoWYrBxeBslYQ77L6hi3Clo6ew78EHxdDrd2RPEDg4Z43dChH2BCyPbnus2K2sbZF0D/muTLsfb5REtc9vbpw1OCnp7jzy++v9iRi8uhjcGDbQD4oAduplxE2HfA6djr5aszRR0tXNQ0XRixTEG1wNp91LqyAPlESYVRL5laK4t56uzqI2MVSflHS/7vroC0XRX5nrp6tt6+bNMJPtKX5cX7SV/vzfe2LbvQG290fd8/2rawvP1fQ7671Jwvqs3v30WlH0T8Iddt/A9W2wq9sr7+hXg9jV4HWR/z69qGf5nd932v2Y5n+cddePuU7tVxqkpZUjf3e/74mmYaffk1Q/jpTEYJ7nVIBThDRpeKL9uteHpt7kyzL3z3/lP3/pl7vnvXigrd1rviadfsp99qzSMkhJ9zQmuVKVd96uHzSOkql5jFX7KuhljkP+zj+/G4tsWCZ7a/HJT/lnzfXbBOTdbVatk0xPicHXJ5NWff3LimPwAwvfYkwUwUYNzGVAp/HqvkE+1QzIPgXcetHVnVcDLM/0HazpZYGpc08DtY/5mSy3XB6roD51/geVdf6vDWIH12fx3AFZx/OsgvHZ3fW0tqPernLQveqjr7dcHrMcmP9a2fc3jVV+GfJOyUK+L5+brwsqqKQNzkm4z019Cbdlbu/+3EV790A7OMvtYG2Tsde5ro1+ArLCl6Cvx+BX236Gt2LwWWVt+aHdGz3Hd4pgoy+VhDtPqTdphWnECoi3Q1uBlzu2TxV09Mvcwf/R9wAtD4Z+a24SHqWXk0HsboObSyVR4YDsjoR7RdvWl/laN8St5qvfVUKyznqa+pw/Uj+97UnwB8onfRfSxPivTR1HQw1y4Ybvy2BEJtw/VdSvhcUk98RyBzlWqakMR93f5/4r1ftpBbHlqr4vei6jVQx+0NSRfP9FDN5jfKcINvoSSbhT06BsUDOXlZwJm76r70tZtZ23/f3elL2q7iq3c5JW9fdXbGNAdivhXuBKukX+3v6df268BX3teKzUjr9ovm49r9W77nc/VmurmORLfcx57qOXBZRX+j4f5eB8qo6P8jtjdXuFMXJ+mWYNx/UVFZN8pyz3c5xSww7dNEE72rOvK5hkSvX9j1JyHzkGXyXfSx4X/SwG7ym+UwTFJjAk3OuuM2kg/Tno9oOatSx8m3rq3N+WEMQ/MKAttfxGPYjdwfNO/VRpia9l8++Vz7XpZaX2HQn3kyb27PY0BlltP7/aQX3da75uNa/tWKzB9bXPeIalHq+QAsn3zU3i+LrQ8pvn7/i00Efs+LfdPPPSVrfX1k8fB+wiLXF8VVVMck8fcpRjlb3C69y7EbZXJU8ypfr+vtRx2Nr7l0qNwe1k64mE+2ZfGAl3Hltnoo6T+e45wAKTrbrIg69lJeW4esHTrMCP5yy5uvuqZPUyoo/55/WQ+q++Au31tjtw0jY9t9WRG9c9l3MNq4IEK2W0OQ+1R0Un2r8z1ikx8W4V3PafddTq9uvcvv/VfN2h5EiBzZ5Z6ee2VxWT3FPGR03ZL4gf1SR7HpN9KHHs1QRMuj2jHKc5Bi9xbDu4Y4ipOKBo+zdT8nUPqNsYlwMqw/3u+qcty6eav5tp8BRYN7/nnzwY4ZkDuoDvwkmezBl62c76KNBb9zzr+Tt4Wsr3MNfls7YO8xG3OScFPo+znLipMuFUaJl6J0hlfcmtfvpoDP30jp/bh0L7n89Dyxfk/r/U8v40spjiH/V96+3/5wLrtf4BCXcMqB/hZEDl+KmwDulkIOW6l5NrBrHDanf6SFAWlZgdasK9x8mTf3KCb6/Qcq8h8f55pO3NrLTnMJRxc15sUNr456ihlsTtql2fKvGtPLODQvuekxGU+z/KfVS5r3vLvdbJ9DvKtrSJ9U9DKVs0OhLu6ksfDgZShqeFdUT7A6ynpQ1mT7QeT36Wezt+lv8MabBbQcL9VPBSfAJytKvcc3tT0iqt0yG2TYWNg+xEe/7z3PVE6ud2xDtuRtLWrZ7z/ojK/7LAPn868HI/Ud97iSuKGkdp8ZFwR2JmM3vKcKvOhpxkzIPZTwax1T/HucTsMBLuPUyeXNb6PWvLPG5jdKvcC0oE/zOURQb3lHVJE+OOlnneszza5YS4Eh5Fn/NhjOOxAp/D5YDLel997zUGL2lCydEyO/J/igC2KvJlL4vaX2yVO9ZSXpKaXuZ5OOSXhaXfrbt+aW7e9F6Cs4an+HUX7Ulz87K8Ey/M61VKIO4iwEjP8HV6yWetL1bLL3ZK7VVpn386lpWleTFICceLpJelpbp8MeTyzr/fq0Lq/MwK6mf5bUf99C9eereTtm7a/fi9oI+UXgL9eozjsVy/D/M4pgSzAS+MLCUOOx56fc8x+Csx+PBJuMP2BmcpEInsgP8cQDGmQH4a/BmucyB/Ppa6myYW0mBeQF9lu5OSs9te5fm25sRsxc8yrZraxbbOlJz8ZQjJye53+PK75N+pJG9GUD9LmRBfJduvxtAuFFbnT1tnvT7lu5NWDm579eCxfnrnbXopdT0t/jke88PIMdmrppyk++CSk3mnTPQq5+tc39+NqG6nGPywgI+Sdjd4X8sOSLjD9gLR6POvLiovw/0mPmmxSrYvRjiYPS6kwxfQP87Bluv/a6vlwsx2EOCnVXG/DCkpU+DOnGQ69ONNmjImxM9zfR7VKs/8+6ZkU3TSvYSxrn76ZgL1nWLdWTyS2rl5IR/ncEwLgB5oB6+acpLug9rZVsiOjtEteFur2+eFxOBvxODb94MigK04a2JXQlwNIKESHcStOvqrsVbi1OHno6QjV26k71FK7JxUPnjt64zHqfrPGAP1tCoot1elBL3pyIhBHnGSg/HoCfHzvBJsrP3zdfccUrIp9S2RqxDTO0PeD6Gv6LGf3tbzSmX+2qr2nStlx5Jk+7/bwau1dnCvgHoylOdzGlyeYvByYvBUF0Y71iJwQOalqdxTP44KeNHFUeVlOA8uv3+8LKS4Oj2tvAxrov7f/yxnFT7PgxE9nzMvfh7kOPibF5hrif73LEp42fnlQMqyJp+sPOylTkwLed6OdqhjXDZXlmKQgeVEvEB1yxwpA89sFJsyttee1xw8Bpehlb235K3K0XXqjSeh/vPk53kxll84r3peFPJxBjfRkSdvZoEf4WLMK9vvqO8lHC8z5JcGlmj13gIvMB/H2PPckUEPtoOpzz9UX7YickJbDPLvup3i77fBH8PRcVsk4Q5PD0L3C2mQzisfhKdVHFGrdnT03+/w00A2Mmk3N8Ou/uN5buh1U8ZLJX8fYNlGjnPSM5Vs/3f/fJ3LJXLsZ9dBf+36a8n2XuK6XbyE/tFtngnGjdvB8+5H9MRE1e9vyTsppoEf4VAMcmfdPmliF76ZVN8iCXd4WgeVEoElnB+X/FFxOaZOPjJBcayjv38g1MQmscywG+jieW4SnJSQgFwF34OZKAwOxpeNVb331fkv53kH1/W5J7Fzr5zZ3pt5E3+O9WuP4VHt4HETP9n+W6X9e6rrkSv0D8e0G/MJouu2neZbIuEOj++g0oDsU1NGsn2Rt9XV6k1gOb71MqIHB7LRSSwz7Lut/wa6wzH6wCUnII8L+Ci/DaE8g4Nxq3o3q/Np/Be59VxAvlsWhfQreofSocmVp5VbEzvZflDp+1sid5ifi8E3isFfi8HrJ+EOjwtAT5qyttG+r7gs0+BkHnT7Rd6uxcMd/pWAfnCu1P9BEbh8ba9SOURPPAwlQIkMxiUaN6/zqS1fBN3eKvfduXCOd68xSWq3p8HP2yKIOuOUJjCefWp9T3171ASTY5M2r9vLJvZYPTH4Fki4w2YdUwoqLgtreK4qH5yFrpxTqx/V4aegL6quzSpdOVIq9X9YBC7/Fr3abb/2Nis4GDeBVFed/13x76Sf1q7367fg533sETw7Trkaaf15iqgJdTHI4+t2ir+jJl+tct8CCXd4OPBMnVI6Qqa0Bue44jKdNnGrAWxTry+gN8O+Pe9tWR4MgcvdwUkql+jVbgeVF2NUMF7KsUC11fllYJ3fF5Bvf3xvnDqqNtu4rP64uJr3twRPqDs26WlS/x5VbmLwZ5Jwh+93SGlWLyXaT5syzmtfN4Sz2yO8q7zcIgP6yBU4c6vct2LpKJlBEbh8v716FxicJC8rHvtEB+MSjU+v81HjGwH5dsf354qh1zbvIDDOS/2Uo4O20wam9i9y53ctq9yjJtQdm/S8GDxq15Od5s8k4Q7/HnjN8vEx6Sp1tvqw4vJNjfY8aFD7Vg1/Vod/HhjQzz2B8bYbCFwqq++zisstKhh/69z2auu8gHx77PDo36+B935rknEw35/id7YFTqg7Juv5MXiKv6PG/SbVn0HCHXIHlF781F2fm5tEe8nB8tvKVzXOowJRg9qqB7POiX2ehd0dg+G8182Dk6g6v1fL9vI7RKzSS2MaqzyfX+dTOUYtLBCQP9+5SacQUTHf0m6GnbSBUWVaw7EyURPqYvC6Y/CDPFnDE0i4M1prSfYP3T/+011nTewb6gcflAbOrJ9LNm5tMHsVNJj98n31BJ7M7o7hcN7rI8oq8N7VJdxzGxsxDhKMb08aI0aUpYBcP11jXLIfGPv94QkMrlxLX+UeMaG+sCNzazH4MqifSH27GPyJJNwZ28AqbXs9yUfGrJLsNb3crPYXfs6b/mfWrQYdTlD4m6J/8mB3oRgGwTn8jwtOUpC3DLp9jee4R0yIX2iftlrno14avNfU/7LgSOcmUkPMAu9tV89u2sDUn0TtFCm234+cUFcrt95uROSC7DR/Igl3BimdJZmT60fddZoS7N3VNjfHxbxp6jxfdQjnm0Y01u+tnNv6YHYZFNA7J/aJ3wFFMBhWQNZT/6tqq9KYqYlZlW9CfPt9dNRLgwXk+unaRCVIz8Umg/w+zQouk4hFS+9MJG69f78Oqt/Tio9KjH1mimCjICTiTO8UgDjH7+4AdnrPgGlaW5C7obQC7HXl36P0Hbrs+bapk//FoHYnzzOtZvsnaPB2XEH5tIV8lLQi+mc1trq2y7Osv61KgdGkonJKO/7m2vPB1Pv0LM8Cbv1zLQmWgvrptAvtlVobUgdS3xBxFNJrx2wMs9/vvCpt11ZOlH7q+bbXuT8Qg++mfn8OaLvSRKEdC4/0gyIo1qkiIEsTL0No3CJm1t/q6HcjlWvX4Z83/Sdo0pZ1CZrNWTU3HFa3P72tumgCjrtIQW4NO9Ny8NZ3W36tTu+03p+nHZ4BAfnv+uhHc5Z3TLs3bWKS7deS7cPt95ubRZqLworEDvPh1e8U3/X9svL0fZJwfyRHykDZUkdV/cvEgoL5tBr0XBXaqYhkiS1tjyOoGwbt2fP8GXTfWl4iOQ+4p2C8hzIOuKdz3B85zte2h4kaSxqXDbvff1FgDN53u5z6du8o2K2I8t3r6pM+/pEk3KHgQXhzsy1tCEcLRQTzVs7tWN42HhE4eHnqhkGdsxMHwwrIZ34Xgu47q6R8+m5TBePDDchNitfRNhGXcP9T0Q/6u1Va+5cSpH1P/ptQ330Mnsr3PODWvyr9x5FwhzINKdkeEcxbDdrjoCpo8IigbkwkJ58fmCwCbv1j6WWTk6N9Jwi8MHDYAblJ8c2ZTI0T9cLUhaLvrf2LiKOnI4/BTaiLwVkj4Q7lGVSyPSiYF8D0N6BNgcOy78GsFXQbsXJuIM9RcnIrIiagaminIpKj3i0x7PGQgHwzy9Jerjgy04B7XunPB9/vp9h3VkgMnup435/FhHp/MXjKFfWdL3KszCNJuENZhrayPSKYN7M+joDeCrr7SdL6fvGthSK4U9+B07mjrnoNyFO977u8TYprk2ow9cwH72pEdauE/j0xoT788naszCNIuEM5hphsj+jsJRr7dz6SQWRNHCczkH6ha8/sVNiCoL51VnKZ5KRo34kBE0jjCMhnil0/XXjbF+Evpd+rRdB9p4X8/n0vTvLuqP5FxAhi8EeQcIcypETAz0NLtgcF82bWe5YHV33X3WneKklZQQb1D6R9L8aj72D8yhEao2lH7EJ7eOykfY+zF3TfpaLv9Tt2HVTmPxUQg6cYqe+JJTF4TB3vuy/Zs4ttcxLuEC9tr/5loKuyI4L5K1UqhHNiy3FlhclgfFQE2/1uKILQNlQwHhOQLwPq/n4XkO8p/e+SbI81DfouLhR975ZjqV/B/bt3UsT5cwT1q1oS7hAnJdhfd53ToWBeMC94fJKXiv1OBry+V9yt9+38pbw87Y7PFbEDTX2OEzEpPlPs32UyNdY04J5LxR5irBPtfS96c1zcuGIF57hvSMIdYiy665chbycVzI9L0Ao6wbxAftBBovdRbN1SEYQF4+fqs4Ccb+IA9D/s3n8D7hkan+TdRX0f+XGuqoXF4BHHytjFtiEJd+hXahAPu4bx1QiOfOh7sOFlqfH63tLmDDmBvOfIYzhSJq6P9oLI2IA8jTmXA69jNT0PbVGsiDO2xSjGUn3pe4e5oyzjRSy20sdvQMId+vOuuXkx6vlIft++VzYJ5uNFrKDT2X9raeLJ4Jm7+W7cCHiZ2rUXRI6yj55aAXenhSIINw2451+KnYHG4I50HWcM7mjXDUi4Qz8D65RoPx5LsJ8DrFmf9xzRREax8oqtvuu4zv5bVs0Nq+9g+5aKoP8daIq8CFbAjfc5APp4ffxwY/BlwPjWLvMNSLjD7iy669VIjo/R0bNe7wXzcaygGoZrq7F3ZqkI7EDTP/fGpPi/mRiHnnRjqYh2b7WTLOK+KS7qc2eR9w2JwbmHhDts33lz80LUV1GdfAH6DrAE8+Xoe+XWXtSg1mCLXQYwioChBEmOkylDTor03bZYAfdvS0UAgxcVm8x6vt8fHvVoY/DVBA/3kHCH7Q2e3zY3R8ccehmSFe4jdjWC+qb8GdygeURGvRIrv2i6z9Vv+ueyLPTPscQIwA71vehNHz/e/j0xqf4ACXd4nvPuet0NnlOi/cQbuv93fnufja+tbGUFkhGd/Qsl/4VjSAb0LBXBzoz92KVZz/czeTTy+p8nebixUATAQPr4pdxHUTH4MiB+EIM/QMIdHi/N5B5213/yanYzu7HBvONkBJSC+RtWzXmW8BCr37QtfdNHf7VUBMAuBBzvsVDqo+/j9e8P+EERwEaD49ShpMTuwgrS4oJ5nX2ZnX2fg76ZIg8ZZLE7+hmG0F5a/VaYdJxJ27Z939YKuK/+VgQwChF9X9/xkEVv5fnYcz2QcH+AhDv8W0p0LHKDtXDWYtkN74hfTCugXJNenCqx0/xX1RsG/Q47aif7Pr9d/1ymhYA8jLYdxjGOi4hJ+p7c1MfrY77srJCP+T5HysC/XedrKenxJH0GcRp3nf3KVLH7PgD36jvx6fx2fXREvSs9xgB6EnDMylhicO9Q07+LwTcg4Q53Nxrz7vrQddL/dNdZdx0oliIHNYL5AgXNcs+UPAOxVATsiNVvJH3vQtvrxod7it2uzJH3sz8pdnYYg08bO9j0MTE7K6ZK/vsk3OGBIKH5Nvl+mjs07tb3Kiadfbn6XvUw+kBGIC8RAAX10deO+SqWF6cydhFn6Ysf42J5/fv2/aVqFavvePClIv8+CXd4XId91F2f27b9MLItapvqe/WcI38E9AIZgM30OW5ZKO5iLQPuKeFuzDp2xqkxItqexQh+T318ufpe9GYH2z0k3OFp0hEzl23bXkq8h3X2S2fHCegF8wJ54GH5hal9svqtUEE7DwTkzm8f8xg1mSr2ED+O5Pfsc5WxHWxl63v8ZUL9Hj8ogmKdNzHb3SI6wf21gUhtg5FZurpAdtH9PNT59NrgSjCWrfczYgXyAMUERAtFXrSrnuvEC0XuuLCxP4s08dnFiuKXYfd9UWNyMThh9S8duSwPdjcJ93L9MdbzePMZ6dPccbzIP0ufOZs1N0fNvOt+vh3jymur54gOZkYeyEi4A/eZ9nw/Abk+Y50V7uNYSGWM+nA7rG3sV0QOodcYNb+Uus829qNqVbSINmbamFS+k4Q7xcmzY+la3OpIZs3NdqlZU24CPp3xftB93uPu97gQzO/UwrdFMCOgjxncA9Xpe7u5SUB99Dpbzikq1uxitah2+MIT6EdexBcRGwy9fV2qXdwyVQR3c4Y7tQyMUvB20V0pkf1L91c/d9dxU+YqgdTgpJeqnuaJgrHQ2bPuegR1EEAw9G9WcJbPsW/9M24tS0Q7ZZw6jvJeDvz31McXLOiUjKmSv5sV7tTakKSOLB3f8i4fZfJ7c/Mi05IG9Gm1ezrf/XAkx1z0fT7nWdDqFMoloAeID4b200vlFbn6sM4ZrxLuBT6PvhOVM8Xeq5dB9+077v+p5/udisFhMxLuVC8nsw/TMS7NTZI7Jd9LSbylgdxlPmLmfOCPou8yN2jlth9H/LsvPH7gLgHvWNnTR3OHaSPpTDnSUXwHAe3xwQiPHY0S0Q9FHKlm4ohoLxXB3Rwpw2DkY2dOmpvjZt425bxEMAWeaTX2kUENDGrACVADu38AvhW1+1hiqgf5/Pb9kdSrqScOZZJwZ3BuJd7PC/poafvV2UAHNYJ5ACjTTBGgHoZbqgJFiUq4Hyj6QZfzx4B7Tj1ugskFfYeEO4OVE++H3R9fFTTInQ806W5lMTp7AIC745KlUijueUQ8k2nAMV9j9FvQfXudyMkr+SGaNu07JNwZw4Bq0f34pSlntfsQk+4SnejsY117/MB3OMIA4N8WQff9TdHvTuBxMhF1auqJQ7kk3BmFtdXu6SohMTW0pLtZTYht466UAgAF+0kRUJiPQfedK/pBlu9VwAtTpx43lEvCnVHpOsHz5uaImVKS7keeCgCwQzNFQAGmioDCLILuu9fFgHPFvzO/jag+aVcpgqOy7ibhzujklaDphaolrAhNL1IdwstzbFcHAABqiQmXTdx7vn73BLYvT2RMg27/0RNgxBwxfAcJd8Y6wEor3NNK9xKS7mdmBGFrA+2ZUgD4X5s4VQoA33URdN99Y9adiJzIWATc06I3KJiEO6NVUNI9zQampHvNs4JmNAGgPFNFAPBdfwTe+43i3568azxqEdtFwPntQOEk3Bm1gpLu+5UPuqzQBwCAf5OIKzcWTDHgMuj2s4EcLVqK08B7/xl0X4veoGAS7hhofU26Rw+Gj2wtBAC2yIQ46mK8K4+/aBeB9z5V/M/XxdBHTeyOrrCjiTx9KJeEOzRFJd1rP1oGACiHMQXqItwv8liZaRf7nXgET5dj58id4o6TAe4k4Q5Z3lJ4HPwxpk1lR8tYlQ8AAFQcA0buQnjTxVNWKj/dWRM7ofeHRwDcRcIdvh1wnXc/3gV/jCODLgAAgF68D77/mUfwePkM/Mhz8JeTyeQi6HeXL6AkM0XwbxLucEvXaaZV7tFnLTrPDwB4rpeKAOBBKWkaeSzIftu24r9H6Mpr2sRPVESubndMFxROwh3udhh8f2+tBwAA2LF8Bnf0Kve0y3nuaTwsn9v+oYlPOp97GsD3SLjD3YOutML9bfDHqGWVw1SNAQAAKnZewGc4dVTIxnFydDmdTyaTpUcBfI+EO3xH14GeNLFHy0wrWeUwVVsAAICKY79lE590Tyu2LyXdv68rm3SMTAkx8ltPA7iPhDvc7zj4/m88AgAAgJ0rIYn65biUfGwKawpKtpewul39gMJJuMM9uo500dy8RCfK1Fl+AAAAO4/9lt2PdwV8lGljpfs3Ckq2JyVMzKgbUDgJd3hY9Cr33z0CAACAnUvJ1OsCPkdKqEq6N8Ul253dDmxEwh0eUMBKh/1ukDHzJACARzJ+AHhc7JeS7e8L+TirM90Pxvgs0rE63XXZlJNsT3Xj2LcE2MQPigA28jZ39FFnpf3WXQuP4Ys0yLlSDHyHugEQ55UiAGo3mUxO2rZN8de0gI+zOtP9bfpcY3kGeWX/h0Kewcr7PCEjBodvLRXBv0m4w2aDruuu0z/v/ngU9BHm3f2PR9zBr7vKZ+sDAGWNl/TPwFAcdtdlQZ/nTRcPvkyfa+hHmnS/Z4q5TwuMQU/E4MCmHCkDm4veWjj3CAAAAHYrJxfPC/tYs+76lBPSg9P9XtN8hMxpgR/PUTLAo0i4w+aDrmXwoMvLUwEAAPqRkqyl7TBOR8yctm37aSjv+cpntZ90f/zclPnukXdWd4cdrQvVknCHx4lc5T71lnoAAIDdy8d5vi7046W4ML1QNV3TGsv3VqL9TaEfM51b/ta3oZGHgEeScIfHDbpSh7sI/Ai/eQoAwIa8+wXgefFfiv3eFfwRZ931OSfeZzWU6R2J9pJXTx96jxrwFBLu8Hh/BN77QPHbzgYAG7pSBADPM5lMjitoT2fNzYr3lHw/Sknt0j5g95kOuuus++M/TfmJ9uQ4L7gDeDQJd3j8gOu8iVsx5lgZ29kAAIB+vW7q2DU0bW5eOvpPFzd+6K555JEzqyR7mgjo/vFDd80red7nXdz/TrUHnuoHRQBPchE4WEjHyphpBwAA6MFkMlm2bZuS7pcVfeyDfKXE9+po1L9SLLmLldt5VX1aHDXrrpdNmS9A3UQqm+PCP2N6lm98M6FcEu7wNOnlqfPAgdOxRwAAlCTtwrP9HhiqdJ57184ddn88q/Dj7zdrO4W73yP9WHTXsrv+bm5W76+331e3zy6/dUb8Krn+Y/45zVftUnm8cm478FwS7vC0wdZVN+BYBg0qpoUFtAJrACDxnhVg6HHgeReLvej+eDSAX2d23/+Yk/JjkpLsryXb7/RCEcDjOMMdnu6i1MFRwMCkTz+pegAAQIT8EtVzJTEoKaZ9ZZfWd5lQh0eScIen+yPw3r+OuNynqh4AbMQqPYAdmEwm6WiZcyUxmL5Ssh3YKgl3ePogK3XIy6DbzzwBAOABf/V8v31FDowoHpR0r1+tyfalRwdlk3CH5wk7VqZt24OCBil9sp0NAMqkjwZGo4vHpkqhatWubO8+87LnW85UF3gcCXd4no+B935ZSGff9wDF6jkAACBE27az7rrs/vi5u+ZKpEqOkQF2SsIdnqHroL04FQAo1bLn+71Q5MBQrSXaL8ViVUtJ9p8l2x9d/+1ig0eQcIfni0q6j3alt+2bALCRZc/3E4wDQ4w99iXaB+O8uVnZPoSXii96vp+d5vAIEu7wfGHHyqRVFiPt7KeqHQAUR/8MDEZa0dtdp90fPzUS7UNwnF50O5BkO1A4CXd4vkXgvcc68LOCDgAe1vd2+akiB4agbduD5uaM9iOlUb1ld/0ymUzeKYpnmSkC2JyEOzxTPvstapb8ZSHF0PfvbzsbADw8Rul9fOKMV6BmeVX7WffHD41FPkNw3twk24d4XvtHjxfKJeEO27EIum8piee/er7fj6ocAGzEpDjABtJZ7c3NOe1zpVG9ZXe9doTMVr1UBLA5CXfYjr+C7ruXB4ZjI5gHgM04VgbgAfkImUtxxiCko2PSqvYL/ftW2fEBjyDhDtuxCLz3/gh/f8E8AJRJHw1UpW3beeMImaHE5CnRfjySVe12sEHBJNxhC7oOfRF4+xeCeQDgO/o+4/WFIgdqkZPtZ0qiasvuetXF5K8Gelb7fb93398XcThsSMIdtieqcw+faY6YcOg6+5kqBwDFEYwDVSgg2X7eXa+7623T/2rlIVh2Vzqj/efgBXBRMfhSHw/lknCH7YlKuM8K+f37HiTq7AHgYYue72fLOVC84GT7eXf9nF/oedFdJ+mfu+u4CVi1XGm/tkq0n4+8LPrOQcxUP9iMhDtsT9SLU0vZ2uWlbABQnt5XTY70he5AJfILUiOS7Yvm5ozxw9urk9OZ4931LiWRu388bGLfEVaq8+br0THniiOkj/9JkcNmJNxheyLPiyshsF32fL+XqhwA3C/oPFsJd6BIeUKw72R7Sooeb3rGeEomp3+3uVn1/q4Z96r3VF5p5f9/8kTFQi3+Rt/vadG/w4Yk3GF7AW1k519Cx/e3zh4AimQXGjB6bdvuNTfJ9r2e29+UaH/3hPhy2V3HedV7Ouv9vBnHWe/L5maiIe0G+CWv/HfG/d36LhcxOGxIwh22PziIUMJq776D+T1vSQeAIscndqEBJXrT9JswXDQ3yfZnx0n5rPe0wvs/6b/Z3CSkrwb0bFJZpZXsv+Sz2Y+DdmjVpvcycmwcbOYHRQBbD2inAfedFvK7922/8WIhAHhIes/MQY/3mylyoCRt26Z26ajHW6ZjYQ538R/OO6sX+fea5jb3Zf45reSRpM+fjkO5SpMJauiTRUxKzJphTfbATki4w3Z9DAoyp2mLZORWu7QCofsMfd82JdwN0ACgsIA8rYCzOhEowdpRMn3ZWbL9jhhs2dwcNXO+9rvu55j0RXOTgI9ckXyd+6B0pcnfK33DVp//dffMl02/Ey0vlDw8TMIdtmsZeO80kFoE//6Lpt8JB1vWAaDM8Ukal0iqACVIK9unPd1r9ZLPEHkB1uJ2XJhXwk9z25yS8j+tlcn0GeWzfp+Pa2XwJdHu7PXe+vhpj/ebKXJ4mIQ7bH+AFaWEhPtVzx2wzh4AHhC0Cy1Nip8rfSBSXvH9e0+3S8nlVyUmmfNK+GUB8SLb1/cu+/Dd9VADL02FLQe0gbcvYWvX3wGD6JmaBwAPWvR8P/0zUIK0un2vp3sdSkISIOocd+AeEu4wjA4vKeFt4YuAe+rsK9S27Vl3XZowARjs+GSajzCgvj76c3edeH4MoC73ubr9wss/GUn/njjatc428VQM3h8Jd9i+ZdB9wxPuQSv8dfZ1Bj8Hzc1kSerwP3XXXMkA7NRfAfcU0NXXR6f+eNpdb7rrc54gnyoZKpXqc1+r248VN0Ex+LLpPwdxoOSrtB6DfxaD75aEOwwjoF0FSWNc5T7LCVzq6ujXn1mqt2e50z/yPAEG0T8nvyr26vx2659TMP7Zijgq1dfq9vOc9IQodrFxr+55pRh8/ZlN12LwEzH49km4Q/2d3boSEu4fA+4pABxG8JM6/dMc2NvKDrBFQSvg9M91BePTe55Z+nu70qipPu833yaXdukPJc4IY3Cr3Ovy2z0x+GpX26kYfHsk3GH7loH3LuHFqRETDlbQ1RX8PDQxtNfYyg4whD56L6+oog6brAZe35VmRRwl+62v2G8ymSwUNyOMwR3tWk8MnuLph8ZjqT8/WovBZ0rueSTcYcuCzjFfD4KiRQw4BfPDCubXzRtb2QG2JWIFnIC8HvNH/LspeLcijpL1FR94USrhgiZ9Dky6DrJ/X/37lzkGl2t5Igl32I2opHsJL069bqyg4w5rL0t9illjKzvAc4UE5Iq9ij469a1PSZzcXhG3rzQpoD73eZzMRyWOPp7CPXXHT4rBP3jB6tNIuMNuLIPuu1fICqOIzt6xMuV7ajC/zgtWAZ4o78K77vm2U0nYKmzj5ZKpn/9kVxoF6LP+XSluCvGnGJzbcqJ8+tyxXI7B/3Gc3OYk3GE3/gq891hfnGp2fRzB/Hqn7wWrAI8XcfzBb4q96GB8tuXxY/rvXVoRR6DejrLKL6SGEiwiYnDJ1+JtcwzmXWuPIOEOuzHqc9y7gWdEMO9YmbKD+fRsdtEh6/QBHsekOLf9vqP/buqTvWCVIcdD14qaUgTtYtPHlx2Dz5rd7PhJ/fm88YLVe0m4w24sA+/9opAyiEi629I2vmB+3arTv3R8AUBR/fPUpHixwfi02X2yJN3jfy9YVer00eb0dB/HyaCPF4OLwb++YFUMvkbCHXYgzy5HKaWRi1hBN7d6qshgftb0e5bmrMdAC6C2MUrEy80F5OV60+O9nvPydHjMuBPGKmQXm13GRbaF05773NT2SrivkXCH3YlKupfS2V0E3Xeu6o06mE+WQccaAdTij4j+2aR4kcF43+Mm/TO71mc7I7lEacTgRMXg1/r4b0m4w+4sAwOoWfQvn18gFDHp8LuqV1Qwn+pi3/VRRw9wv4WAnKDn8YdiZ8f6TIKbRKQoeRebl6OLwacBffxFrn9kEu6wO3+NZKBZWlA1tZW0KBETIO8VO8C9AXmaEF+OpE/g7mB8L+B5XAUfuwi7+C5NlQKF+TMoBp8r+mK8CbinCfVbJNxhh0FF4L3H/OJUAX05Acis6f+s1qu8uwKA8vpoAXk5jpr+V+eaEKcPP/Z8P8fKoH+/YZV7GTH4tOl/dXs60nWh9L8l4Q47bHQC7z0toQACj5Xx4pYyRMysC+YBNhO1EklAXkYw7mxXhqrvBPhLRU5JAo+VmdlpLgbnKwl32F1HF7nCvaSOLiqgf6MWhgbzs4B6KJgHeNw4ZSkgF4z3xNmuDNWBIqBAfwbdVwweG4NPm5j3s5wr/X+TcIfdWgQ2tqVsbwx7U7pV7qML5s8F8wCPErUiSUA+vmDc6jeGalpQ3AXRMfjM9yHUmRi8HBLusFvLwHsX0dHlY2UWAvpRBfMpkJ8J5gEE5PcE5DPFP5pg3MtSGTrvj6IoOQF6HnT7U08gJAafBcXgXpb6HRLusFt/B957WlA5RDXCVrn339GnF7BFTHQsvCwV4NEBeWo3o5LuJsXHE4ybEGfoxByUKOpYGZPqMSImOq68LPX7JNxhtyIbn2Je4NM1wufNzfnaY+l4xuyoiZnsEcwD1BeQO/u4XxGr25d5HAh9+SjmgC8xeJpQXwbd3qR6j7rxVIrBI044EIPfQ8IddhxkBN67tLPTolbQHZhh762jnwYNrpZ5QAnA4wPy88ak+Bj66JMmZkLcVnPG4iAfqwgliWqDTar3179H7TC/NqF+Pwl32G0Quwy8/V5ufEvxNvDeAvp+nI2wbgEMQdQKpWlOBLPbYHzaxJwxnSZy3nkCjMipF0ZSmPPg78OeR9BLDB5Rzla3P0DCHXZvEXjvYgZ8wS9P3c/brNhdMD9vYs6FNbMOUHdA/ruzjwcbjF/kF/fBWGKv9D27lGSksBg8qo9PfbsYfLcxeIq/I3YSmFDfgIQ77N4y8N6zwsoichb0jYB+Zx19CipOR1inAATkzxfZh4yhjz4KHA/agUaE6EmeVdLdSndKEXm01xvfhZ3G4FE7zM9NqD9Mwh127+/Ae78oLKCPfHGLgH53olbOmVkHGEZAfuCs150E49Mm7sV158FHKzJSXb27KuBjpATjpfdIUch3YtHE7vwQg++uXKdB97bobQMS7rB7kZ3btMDyiFzt5GVG2w/m08q5qCTJezPrAIMJyM8cw7D9Mm1iJsSjx3uwKOAzrFa6n3gcFCByUn3me7D1GDzF3/Og25tQ35CEO+xeZGNU3PatfN52ZJmcOlpmax19ql9RK+esbgfYvsgkaUpOffAIttZHnzRxR8kIxol2VdBnSUdqfLbanZHH4I6W2V7/Pm3ijpKJHitWRcIddt+5hQYchQ7uImfYBfTbqVerM+OiVs5Z3Q6w/THLIjggn3nJ+dbGfm8CP4JgnGgfC/s80+ZmtbtjZogU3TZ/sJNtO+UYGIObUH8ECXfoxyLw3iXOJKeVyZHJ0v2usz9TLZ/lNLBuWd0OMNyA/FRC6ulyMiNyYYFgnLHHXvdJbVtKun9Kx1xKPtKnAla5T5vYldlD6OMjY/ASxohVkXCHfkR2bD8V2NmnhGn0izbmznN/ckefVh9Glp3V7QC7DcgXwR/jg+PfntQ/fzkzuolb+SYYp6RY46Lgj5gSZinx+E/3vf2Qk+/aPMbQRh/YyfbkPj7F35Fl986E+uNIuEM//g4e0JU4ED5pYicikjNnyT26o08vaIl807zV7QDDD8i/rNK2+vPRole+Wd1OSf6s5HOmsXVKvn/OZ72n+OTITh92FIOfFxCDn1r49ugYfDVJFxmDm1B/pB8UAfRi0cSdpVnyYO1tE7+tLG3rfNUNPq5U0+I7+uTY6naAnQfki67NXwSPIVKfk45GeeWJbNRHp2T7PDgYP/YkKEha4Z6+FzVN3E3Xv8fd93r13brKP/+6FV+O3ZW44EkOm5vdUJFS0v1KDL5xDB79vOwwfwIJd+jHMrqRLrEzSzPs3Wf7vYldjfVl+7Wk+8YdfWTQssyrMgDYvTQpPgv+DOklqmdd23/ocdzbR8+b2G3mgnGKk+pj991ISfd55b/K3lpbfLD292885f9NSqysJiaSj7f+TnL+63ejhEl1Mfhm9buEo+KWjR3mTyLhDv10astbg4G+TfNgo0THTfyMberAznKHbyD2746+hGR7IuEC0G9Aft7EJ6vS2caNpPt3++j0fKJ3ny3zUYFQmrdN/Ql3Nre+iGt2R3uZfiyamwRi2i2QkvCLkZZVisE/FRCDS7p/v38vIdn+pR2VI3kaZ7hDfyI782LPKc+DnBJearSfO3xnun/b0ZeSbL8Y8YAYIDIgLyHISkn3M4/jX330vIlPtq/qCZQYZyy7H+dKgjWz5mYS5jTHfsmndCzXmF5emxPcJXw39sTgd/bvq2R7dLks7DB/Ogl36E/krO1LAf1GJN2/7ehLSbY7FxYgJiBP7e/7Qj7OPL9M0ItUm6KS7SkYv/BEKJgX/bFJDHjUfH157SoBPxv4711KDC7p/m3/Pm3KSLY3YvDnkXCH/vwdeO9p4QH9sqCAftXhz8ZcWQtKtifvcx0BoP8++qQp51i6ee6jR510zy9ILWXFv6N+KL0NS2NI5w/zGKsEfOpv/smTvQcD/G6UtKhpFYPPxeBfjvopIdn+zlE/zyPhDv2JbKympQenhQX0qw7/aIwVNQ90PjVlJNuvnAsLEK6kFU5fgtExroRLY7l8tE4p45O3JsSpRFrl7gxinhoXptjoQ9f+fs4r36dD+eXycSGLgso6TW6MMvbLkzqlLHhbNnYHPZuEO/QnOplcQ2Ba2iqp07FtXy9s1VxiGxtAfECegvGSVohOm5GthFvbYl7K72xCnJrasOvGbgy20/ekCc+UeB/Sjuj03ShpQupNV7YfRhaDp/70Q1NGsv1LDO5Fqc8n4Q79DvQiG61ZBWWUJiVKm0lNge3gV9KlQD6dV9iUs2oueedFqQDFSP3zsqDPs1oJN/igPK96K2WL+YrkJbXFYuldA+dKgi3G1pd51fu88u/GssAY/CDH4LOB9+9p51qaTH9T0Me68G6W7ZBwh35FrnL/qZIO/6Qp52iZlWnu8E+GGNTno3NKC+RLHPgBjFZeOPC6wI+2CsoHd77u2hEyJa16S94615VKHRcYZ1C3FCee5cT7rOI+Pu1iWxRYtpf5GJ8hxuBp3PK5KWthpN1AWyThDv2KHODVtEK7tG1tK2+aAc2051XtaUb9tLBAPnltGxtAcQF5iTvRVkH5h7zafTqwQHxe2ljWUTJU3IalseWrxnnu7KYfusxHzdS6M7rUGPwox+DzIVSUHIOnifTSJtPF4Fsm4Q79+jvw3tV0/AUH9LcHU7NKO/m9fE5caTPqK1bOAZTbR6f+o9Q2erXavdodaSlRkyfDSwzErXxjCG2YpDu7NKu1H8pHy5TaxqcY/GwgMfinPF4pjeNct0zCHfoVGqDW1DnlbW0lnx2WyvIyv1S1inK9lWh/U+jHXFg5B1C8dLRMqcmqvdzHfa4p4ZFXvJ3lQLzUcYUJcQYh12NJd3apyp3R+ezudwV/xFUMfllZDD5fi8FLHJeUvOCxWhLu0H9DFmlaWXkdNuWfszhf6/TnBQfxJ4V38k1j5RxALQH5sinzPPd164n3s1K3+KeEQd5aXuLxMesu8mIIGEo7JulOH7H3ZY7Davpu1PCug1ku20+VxOBnpcfgjpLZPgl36Lfzug4e1L2osLxKPUvurk4/BfT/5Be7hAb2q5n0tSC+5ET7ymFO4gBQfh+9aOpYDZX6vhSMf8qB+VH0Oe85CE+fI/XP6fiY0l/4umxMiDPMdiwlFX9pvEiV3XqTF2fVdMRMyTvZ1u2vxeBnJbxAPX2GymLwY7vXdkPCHfrnxamPHwjXFOSlDnX1YpfVqrqDPgZYOYBfJdn/aW5m0g8qKbe3eQsjAPX00Sfdj/OKPnIaB6UXhX/OyfeTvrak55Xs6X6fchCePse0gjJLCRcvUWPI7diyuVnpbhzKLs1yfLhf2feiphh83ty8QH2VfJ/3McG+HoOnezc372CpJQY/7571ua/nbvygCKB3V03c2ZxVvjE9JWK7zus4B6c1meaOf54746v8/NPLcxfdtXzqiu48WNvLdelFfrbTSr8TF85tB6jWce6DahtjrD5zWnnY5H459dF/NTcruq+emmTOSfxpvl425Z7JvtHztfKNocvf9ddp50lTx4pU6pT6hLTS/VUN7Wr6jN1nTQvfzior571bMfhyrX9/bgy+6tuHEIOncY7dazsk4Q79+zuy80mdRI3HdqRzQ7vP/qIp+3zTTYP7Jg/mmxzkXzf/3vnwsbt+vCOBsT+wIKC2HQwAfNs/X6fkQXPzss9pxb/KrLmVGM999FXz7bb66xy0/3Tr991rKl3YcI+3Vr4xsvYsxRtppftZU/dEGeVKfUVKur/OR7OV/p04zzH4UcVlPs3XwQYx+NVazD3kGHzZ1LWDoUoS7tC/6Nns/dzA1jgIPsyd43yAA6/ZHYH/0NmmDjAAOemeznu9bIa3MvSuJPrBCB7rud1njLQ9S3HSq/wixtPGand2E/utVrovKvhOHOfjUcXgYnAewRnu0L8SEu41q+Gt6WzW0b/yklSAYcjb4181dbxkjQfGqraZo037srvj5+bm5dDaNXbhQ0Vnuqc+4dwjG4RXjorrh4Q79N9ZXQcP2l4MoPxSQK+TqNtrHT3A4MY4ku71Wz1D0KZ1cUfe6SHxzi6sVrrXsiDOwrf6HYrB+yPhDnHBTJTqzxeVdB9ER79QDADDI+le/fj0lW3m8C/T5ua9DbBtKel+lo9sEYOz6xj8XDH0R8Id4gKasAFjDR26Dl9HD0C1fbSke51jU8l2WJPOce+u9ELodM0b57mzG2lB3JkYHDH4sEi4Q4y/CujUhxDQ6/B19ACU2UdLutdDsh2ytDCpu06663NzkwTdVyr04KCrc0e1xODd9UvjTHcxOPeScIcYy+D7D2bgqMPX0QNQbB8t6V4+yXbIcsIzJdrfNDfHyECfTis6z92LVMXgPEDCHWI6p0XwR3gxwDLV4ZcpBfCvdfQAox3zpIRueuGg3WjlkWyH5kui/SCvaD9tHBtDrLOaPmyOwd96bEWSbA8m4Q5xloH3HuTWyNzhH6paxbjOgfyFogAYr7Uj4PQH5bhoJNsZubZt07utLrs/fmisaKcM++lIo8r6+JMcg+tPyorBzxVFrB8UAYRZBg7sBnsWYepYukHKMg+crVCJk1bNpZXtS0UBQE7svs6JhDdKJNR5XqQAo5WPj3kTHC+kcXJaHXyRP8cqNty7Fa/92IzrLPn9kcdxv3f1811NE6I5Br9qTF5FW+YY3K7CAki4Q5yP3TULHGTuD7UhTkf2dL9f2r5+2XjRUYQUNBxaNQfAHX30SQ7K07Z5E+P9s8WcUUsvRc3tz0Hgx1h019tbx4ymcfPy1niar89tFTevJiNWkxBDTM6n3ycdb1TVxGjKLXTPKb1bLSXdZ2ptSLvyWgxeDkfKQJxl8P0HnYhee5mqM+X6lYIHHT0A9/XRKZGU+mgrsPqT+uVfJNsZs/xCyk9NXLI9xX/pqIdXBbzTq7Z+Y5GvizRx213HuRz/0/3P6XrVfN0tMIQ4ZJ6OPKo0Bn8lBu/du/x9EIMXRMId4iyD7z8dQyHnM+VeFVDeYwjkX+XyBoCH+uelifHepATUz7aYM2Zt286bm2R7RAyUxskpQfyzRPtO+pPrnIw/yQt/UgI+9S/HTd0Tu28qfiYn+RmIwXfftqQ6f6woyiPhDnGdUPRg6+XIyjp1+O/UvJ0G8gIIAJ4alEsG7yYQP7bzjLHL57WfBY6T0+4ScUi/fctVKvM8sZuOGk0JyWVlv0aVq9zXn4EYfKcWOQZ3/FShJNwhVmSnP6qzzfPKhzTQstp9u4H8a4E8AM8NytdWu+tPtheIS/Ixem3bpkT7adA4eTXhJfaI7WOWOfn+c44FFxV9/N8HEoObWN9+2+IImcJJuEOsyMHXXs0z5s/o9Bd5sCWof57zxow6ANvto09yUK5v2U4gvlQcjFlOts+DYrxXJryKjQVT0j3Fg4sKPvJ8IOW+mlg/FoM/ix0zFZFwh1gfg+8/FdR/SRyzuascQByaUQdgB/1zWon4urlZhWg13OOkMc3PAnEITbZ/OUbDOxOq6GteNeXvft7L7x8YSrmn/ilNduinHmeZY3A7Zioi4Q7xDWekmYHW5DB3+lbTPVxXU5L9F2e1A9BDH73Iq+EOG0fBPST1y7+YDIcbOUE5D7j1eXOTFPM9rKuvWe1+LtWvAyvz1TEzPzcWvz3EC5crJuEOsaIDyBcewTer6ax4v7uTf5s7eWUDQN999HlOhki8/1sKvl/l42OspoXmS7L9oIl5Qeq5Sa+q+5qT5ma1e4nP76Cr13sDjcFXi9/EmXfE4I1da1WTcIfYTmYR/BH2PYVvnsfVrU5/zAPmZXOzov0/eQAKAJF99CrxnibIFyMvjrQrb5VoX6gdcCO/nyoi2X6RYwjqj81TP1PiBObBgMt9PfH+Tgz+v0T7iQm8ukm4QxmNapSp4n+w0z9uxnWGbBpovraiHYBC++iLtRfenY8oML9uvp7R/lqiHe70obv6Xgmc4gTJ9uH0MamtLfEdIr+OoOyXa0fNHI4wBj/MMbhE+1DqtCJ4WNu2+xEdty+Z+qWuFfecfmtuVhdMB/brLbvrj+ZmK+zS095KfZn1PEBdKPWdPcvUPve5G+ja0RA7fZ7TnttwfWw/z3WekxFDXAG4yH30hbpUbT+tXe/nmZ52P456vm36Tv7suznY8d9lU86O8NSO/EcMPrgYPO1Yey8GHyYJd4CnBWm/Vt7xrzr4PwSBAAykf97LfXPqo1NfXeuZt4vu+rO5SbILwmGzsfllwK0d6zT8PuVTQfHeqOvbQJLvqxj8T23H8Em4Azyv45/mTv9l4cH9dQ7gP6afkuwAjKCPnuW+edVHlxyAr/poK9nh8d/1lBTteyXyW+85GkXdSvXqUyEfR52rLwZvmq+T6GLwkZFwB9j+oCxdL/LPqAD/Kl9/6dwB4JsEfOqjp03cUQGL3EenBPuVVezwrO91OkbmtOfbLvNLnFHH+pQmZF97Inc+o+la/x4dgy/X+veFpzNeEu4A/QwAVoH9Xh4I7OXrqcH+dfP1RTLp539XHbzkOgBs3Efvr/XRP671y6u++6kB93W+/lrrs5eS67DV728aS39u+l/d6iiZ8dW1dGTRLPhjjPIc90pi8GttArdJuAOUNTD43kBOkA4Acf3zfQG6l+NCzPfypPvxpufbpp2jr5T+KGO0ywI+yn/0N2JwAAAAANiqNAnWXf+0/Zsp/dHWubM2nvoHlfg/RQAAAABUZN70f5TMwrERo/ZHAZ9h32OAOki4AwAAADX5PeCe7xX7eOXJluh3Ze15ElAHCXcAAACgCm3bHjRPf6nxU6WznC+U/uhFT7q89AigDhLuAAAAQC1+DbinZDvqAbCxiSIAAAAAapBeltr0f7TGL5PJ5Erp09W/T03gWepdPZTHgwpY4Q4AAAAULx8n03ey/VqynTV/KgLgIRLuAAAAQA0izrBeKHbWmHwBHiThDgAAANTgIOCeHxU7a0IT7m3bTj0CKJ+EOwAAAFC0tm3TUTLTgFtb0cz/TCaTZfBHmHoKUD4JdwAAAKB0US+qlHDntoUiAO4j4Q4AAACUbhZx08lkcq3oAXgMCXcAAACgdC8C7rlU7AA8loQ7AAAAULq9gHsuFTt3cMwQcC8JdwAAAKB0M0VAIf6rCID7SLgDAAAAAMAWSLgDAAAAxWrbdk8pAFALCXcAAACgZPuKgIK8CLz3UvFD+STcAQAAAP5tpgi4Q9iOi8lkslT8UD4JdwAAAAAA2AIJdwAAAIA7tG3rOBtumwbdd6nooQ4S7gAAAAB388JWbpsG3Xep6KEOEu4AAAAAd5spAlaCdzwsPQGog4Q7AAAAwN1eKgLWRCbc/1b8UAcJdwAAAKBkV4H3nil+1rwc6fcAeAQJdwAAAKBYk8nkOvL+bdseeApks8B7LxU/1EHCHQAAAOD7flUE5PPbp0G3v55MJla4QyUk3AEAAIDSLQLvfdC27Z5HMHq/Bd5bsh0qIuEOAAAA8H0p2e5YGeaB9/6o+KEeEu4AAABA6aITjm88gvFq23be3Ey8RFl4ClAPCXcAAACgdMvg+09z0pVxCp1wmUwmC48A6iHhDgAAAJRuWcBneOMs9/HpnvlJE/ey1OTCU4C6SLgDAAAARStkhe+0cbTMqLRtm57578Ef409PAirrsxQBAAAAULq2bS+7H7MCPsorR3yocz36T1ffrj0NqIcV7gAAAEANPhbyOc4cLTN83TM+auKT7ReS7VAfCXcAAACgBotCPse0uy49juFq2/ag+3FawEf5w9OA+jhSBgAAAKhC27b/dD9KWV1+PplMDj2VwdWx/eZmQiW6ni27+vWzJwL1scIdAAAAqMVFQZ9l3rbtmUcyHAUl2xOr26FSEu4AAABALf4s7PNIug9EYcn2dG77O08F6iThDgAAAFRhMpmkFe6lvUQyJd0/eZFqvbpnN+9+fGrKOq7Iy1KhUhLuAAAAQE0uCvxMaXX0p7xKmkqkSZK8Q6GkXQop0f7W04F6SbgDAAAANSk1GTltbpLuJx5R+daOkJkX9tHeW90OAAAAAPSmbdvLtmwp8T7zpIqsO2lV+0mh9eYfRxMBAAAAAL1Kyey2DmfdNfXEiqk36bz9zwXXl7mnBAAAAAD0roJV7utOrFwOrSulJ9qTS08KAAAAAAhR0Sp3K95j6sdeJYn21VEy6gUAAAAAEKdt2w9tnS4dH7KzOrHfXac5iV2LI08OhmOiCAAAAIAa5VXBn7qr1uNarrvrorv+nEwmF57os+rBQXf91l37lX38i+7Zv/YUYTgk3AEAAIBq5dXBpwP4Vf6XfO+uxWQyufZ0733us+7Hr92Vfu5X+mssu+sXzxqGRcIdAAAAqFp+4eRsYL/WVXctuutjIwG/SrCnxPrL/Kxrfwltep6vuud65RsMwyLhDgAAAFRtAEfLbGLZ3CTh/2puEvFXQ03CryXXf8o/ZwP8NQ+753fu2wvDI+EOAAAAVK9t23SG94eR/dop4Z6S8Mvu+jv/Of3dcjKZLAt+VmliZHUMzKy7fsz/PM3X0Em2w4BJuAMAAACD0LbtSffjjZL4n1VCPlk2N0n5lVVy/l//n02OOenKOiXI79pRsJ5MT9Iq9Wn+87QZR0L9Pudd+R6qmjBcEu4AAADAYLRte9b9mCsJCiTZDiMg4Q4AAAAMRj6uJL1EdV9pUBDJdhiJ/1MEAAAAwFDkF4m+ar4epQLRjiXbYUT9kCIAAAAAhsZKdwrhBakwMhLuAAAAwCBJuhPoy06LTV5ACwyLI2UAAACAQVo7XuZcadCjlGT/RbIdxknCHQAAABislHTP52e/Uxr04F1X31KyfakoYKT9jiIAAAAAxqBt23n347S79pQGW5Z2U6Tz2i8UBYybhDsAAAAwGm3bpvPczxrnurM9Kcl+mI8wAkbOkTIAAADAaKRztdORH40jZni+ZXe97urTa8l24H/9jCIAAAAAxqht21lzc8SM1e481tvm5rx2iXbgGxLuAAAAwKi1bXvS/fi9cbY7D0vHxxx7KSrwPRLuAAAAwOi1bTvtfrzprrnS4A6L7no7mUwWigK4j4Q7AAAAQJZfqpqOmZkpDRqJduCRJNwBAAAAbsnnu6cV7zOlMUrn3fU+vWRXUQCPIeEOAAAA8B2OmhmV9ALU99117ox24Kkk3AEAAAAekBPv8+76rbumSmRQ0otQ/5xMJueKAnguCXcAAACAR2jb9qD78Wtj1XvN0lExf3TXhdXswDZJuAMAAAA8Qdu2e92PVfL9QIkUT5Id2DkJdwAAAIBnupV8n3XXnlIpQjou5mMjyQ70RMIdAAAAYMvatp01X5Pv+0qkN2kV+6K5OZN9oTiAvkm4AwAAAOxQXv0+a24S7y/zn3m+6+YmwZ5WsC8k2IESSLgDAAAA9Kxt25R8n3XXi+6aNpLwD1lPrqefV46IAUok4Q4AAABQgJyEnzY3K+F/WvvzmM6DT8n0lFz/2HxNsqfk+rUaAtRAwh0AAACgcPlM+GT1M62M37v1d6Vb5iv5eOvvllasA0Mg4Q4AAAAwEGuJ+WSar9tebul2y+76+9bfrVal/+/fkUgHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOD/2YNDAgAAAABB/197wwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwkwALhZ2cb26nVCAAAAAElFTkSuQmCC"/><span class="hdr-r">대외비 — 광고주 공유용</span></div>
+<div class="wrap">
+
+<div class="cover">
+  <div><h1>Devsisters QBR</h1><div class="sub">쿠키런: 킹덤 &nbsp;·&nbsp; 2026년 상반기 성과 리뷰</div></div>
+  <div class="cover-r"><div class="pill">H1 2026 최종본</div><div class="cover-meta">Org 565 &nbsp;·&nbsp; 리타게팅 &nbsp;·&nbsp; AppsFlyer &nbsp;·&nbsp; APAC<br>담당 AM: Jisung Yoon<br>작성일: 2026년 6월 23일</div></div>
+</div>
+
+<div class="sec">
+  <div class="sec-t"><span class="n">1</span> 연간 성과 요약 (vs KPI)</div>
+  <div class="s4">
+    <div class="stat b-rd"><div class="sl">KR 최근 (6/22)</div><div class="sv c-rd">12%</div><div class="ss">주간 누적 ROAS · KPI ≥19% ⚠ 하회<br>D7 ROAS 37% · KPI ≥33% ✓</div></div>
+    <div class="stat b-gr"><div class="sl">US 최근 (6/22)</div><div class="sv c-yw">24%</div><div class="ss">주간 누적 ROAS · KPI ≥15% ✓<br>D7 ROAS 47% · KPI ✓</div></div>
+    <div class="stat b-rd"><div class="sl">Q1 최저 (3/23)</div><div class="sv c-rd">13–14%</div><div class="ss">5주년 후 오가닉 감소 · 약 3주 KPI 하회</div></div>
+    <div class="stat b-pu"><div class="sl">H1 최고 (5/7)</div><div class="sv c-pu">175% / 232%</div><div class="ss">KR 175% · US 232% · 5/7 업데이트 직후</div></div>
+  </div>
+  <div class="cw"><div class="cw-t"><span>주간 누적 ROAS 전체 추이 — 2026 H1 (Android 기준)</span>
+    <div class="leg"><span><span class="ld" style="background:#3DDC84"></span>KR ROAS</span><span><span class="ld" style="background:#d2c8ff"></span>US ROAS</span><span style="color:#3DDC8433">— KR KPI 19%</span><span style="color:#d2c8ff22">— US KPI 15%</span></div></div>
+    <canvas id="roas_chart" height="110"></canvas></div>
+  <div class="s2" style="margin-top:12px">
+    <div class="ins"><strong>H1 3대 피크:</strong> 1/15 5주년(KR 155%), 4/8 iOS 재개+업데이트(KR 119%·US 131%), 5/7 신소재+업데이트(KR 175%·US 232%). 업데이트와 신소재가 맞물릴 때 효과가 극대화됩니다.</div>
+    <div class="ins w"><strong>현재 상황 (6/22):</strong> KR 오가닉 재차 하락 → 주간 누적 12%로 KPI 하회. 예산 $900→$700→$500 단계 감액 완료. US는 KPI 유지(24%). 오가닉 회복 또는 Q3 업데이트 전까지 보수적 운영 기조.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-t"><span class="n">2</span> 오가닉 트렌드 영향 분석 <span class="src">✓ 실데이터 — Postback 오가닉 Export</span></div>
+  <div class="s4">
+    <div class="stat b-pu"><div class="sl">H1 오가닉 매출</div><div class="sv c-pu">€36.5M</div><div class="ss">iOS €19.4M + Android €17.0M</div></div>
+    <div class="stat b-pu"><div class="sl">H1 오가닉 유저</div><div class="sv c-pu">151만명</div><div class="ss">iOS 50.5만 + Android 101만</div></div>
+    <div class="stat b-gr"><div class="sl">오가닉 최고 (1/12주)</div><div class="sv c-gr">€4.0M</div><div class="ss">5주년 · 유저 14.8만 · H1 최고</div></div>
+    <div class="stat b-rd"><div class="sl">최근 오가닉 (6/15주)</div><div class="sv c-rd">€728K</div><div class="ss">피크 대비 ↓82% · 지속 하락 중</div></div>
+  </div>
+  <div class="cw"><div class="cw-t"><span>오가닉 주간 매출(EUR) vs 리타게팅 ROAS</span>
+    <div class="leg"><span><span class="ld" style="background:#d2c8ff"></span>오가닉 매출 EUR (좌축)</span><span><span class="ld" style="background:#3DDC84"></span>KR ROAS% (우축)</span><span><span class="ld" style="background:#e8c84a"></span>US ROAS% (우축)</span></div></div>
+    <canvas id="organic_chart" height="120"></canvas></div>
+  <div class="s3" style="margin-top:12px">
+    <div class="ins"><strong>📈 4대 오가닉 피크 → ROAS 연동</strong><br>1/12 €4.0M → KR 155%<br>3/9 €2.3M → KR 62%<br>4/6 €3.2M → KR 119%·US 131%<br>5/4 €2.0M → KR 175%·US 232%<br><span style="font-size:10px;color:#3a3a3a">H1 전체에서 오가닉-ROAS 상관관계 일관 확인.</span></div>
+    <div class="ins w"><strong>📉 현재 우려</strong><br>6/15주 오가닉 €728K — H1 최저 수준. KR 오가닉 특히 취약. 내부 분석 결과 KR iOS 오가닉 구매 중 Remerge 기여 비중 0.03%로 경쟁 환경의 구조적 어려움 확인.</div>
+    <div class="ins g"><strong>💡 Q3 제안</strong><br>오가닉 주간 <strong>€2M 초과 = 예산 확대 시그널</strong>. <strong>Q3 업데이트 일정 사전 공유</strong>를 부탁드립니다. 3~5일 전 예산 포지셔닝으로 피크 효과를 극대화할 수 있습니다.</div>
+  </div>
+  <div class="cw"><div class="cw-t"><span>오가닉 유저 수 — iOS vs Android 주간</span>
+    <div class="leg"><span><span class="ld" style="background:#d2c8ff"></span>iOS</span><span><span class="ld" style="background:#3DDC84"></span>Android</span></div></div>
+    <canvas id="users_chart" height="70"></canvas></div>
+  <p class="note">📂 출처: Postback 오가닉 Export (2026.01.01–2026.06.23) · EUR 기준</p>
+</div>
+
+<div class="sec">
+  <div class="sec-t"><span class="n">3</span> 광고 소재(Ad Label) 성과 리뷰 — Spend 대비 ROAS 순위</div>
+  <div class="s4" style="margin-bottom:16px">
+    <div class="stat b-gr"><div class="sl">최고 성과 포맷</div><div class="sv" style="font-size:14px;color:#1D9E75">Video In-stream</div><div class="ss">BM 200% · Fakead/CI/Ingame 최상위</div></div>
+    <div class="stat b-pu"><div class="sl">테스트 소재</div><div class="sv" style="font-size:14px;color:#d2c8ff">Craftsman</div><div class="ss">Remerge 자체 제작 인터랙티브 · KR/US 실험 완료</div></div>
+    <div class="stat b-am"><div class="sl">CT 비율 기준</div><div class="sv c-yw">&gt;70%</div><div class="ss">4월 이후 83~89% 안정적 유지</div></div>
+    <div class="stat b-rd"><div class="sl">비활성 포맷</div><div class="sv c-rd">Playable</div><div class="ss">3/23 전면 비활성 · Video 대비 ROAS 열위 확인</div></div>
+  </div>
+  <div class="s2" style="margin-bottom:14px">
+    <div>
+      <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin-bottom:8px">
+        Ad Type별 성과 (YTD 2026)
+        <span style="font-size:9px;background:#081510;color:#1D9E75;border:1px solid #1D9E7530;padding:1px 6px;border-radius:3px;margin-left:6px;font-weight:400">✓ 실데이터 — Pivot</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Ad Type</th>
+            <th>Cost</th>
+            <th>Cost 비중</th>
+            <th>AP ROAS</th>
+            <th>D7 ROAS</th>
+            <th>CTR</th>
+            <th>재참여 수</th>
+            <th>평가</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#1a1a1a">
+            <td><b style="color:#d2c8ff">Image</b></td>
+            <td style="color:#f6f4f2;font-weight:700">$144,838</td>
+            <td><div style="display:flex;align-items:center;gap:6px"><div style="background:#d2c8ff;height:4px;border-radius:2px;width:36.4%"></div><span style="color:#888;font-size:11px">36.4%</span></div></td>
+            <td style="color:#1D9E75;font-weight:700">1.48×</td>
+            <td style="color:#1D9E75">0.76×</td>
+            <td style="color:#888">0.39%</td>
+            <td style="color:#888">52,287</td>
+            <td><span class="badge bg">✓ 우수</span></td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td><b style="color:#3DDC84">Video</b></td>
+            <td style="color:#f6f4f2;font-weight:700">$124,835</td>
+            <td><div style="display:flex;align-items:center;gap:6px"><div style="background:#3DDC84;height:4px;border-radius:2px;width:31.4%"></div><span style="color:#888;font-size:11px">31.4%</span></div></td>
+            <td style="color:#1D9E75;font-weight:700">1.36×</td>
+            <td style="color:#1D9E75">0.71×</td>
+            <td style="color:#888">0.85%</td>
+            <td style="color:#888">64,786</td>
+            <td><span class="badge bg">✓ 우수</span></td>
+          </tr>
+          <tr style="background:#1a1a1a">
+            <td><b style="color:#bfbda7">Native</b></td>
+            <td style="color:#bfbda7">$97,155</td>
+            <td><div style="display:flex;align-items:center;gap:6px"><div style="background:#bfbda7;height:4px;border-radius:2px;width:24.4%"></div><span style="color:#888;font-size:11px">24.4%</span></div></td>
+            <td style="color:#e8c84a">1.29×</td>
+            <td style="color:#e8c84a">0.71×</td>
+            <td style="color:#1D9E75">0.90%</td>
+            <td style="color:#888">39,075</td>
+            <td><span class="badge ba">보통</span></td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td><b style="color:#e8c84a">Template</b><br><span style="font-size:10px;color:#555">(SV + Playable_Remerge)</span></td>
+            <td style="color:#555">$30,649</td>
+            <td><div style="display:flex;align-items:center;gap:6px"><div style="background:#e8c84a;height:4px;border-radius:2px;width:7.7%"></div><span style="color:#888;font-size:11px">7.7%</span></div></td>
+            <td style="color:#D85A30">0.90×</td>
+            <td style="color:#D85A30">0.46×</td>
+            <td style="color:#555">0.10%</td>
+            <td style="color:#555">8,977</td>
+            <td><span class="badge ba">혼재</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:10px;color:#3a3a3a;margin-top:8px;font-style:italic">* Template 전체 평균은 저성과 Playable_Remerge 포함 수치. SV 단독 AP ROAS는 4.36× (하단 세부 참조)</div>
+    </div>
+        <div><div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin-bottom:8px">CT 비율 추이</div>
+      <div class="cw" style="margin-bottom:0"><canvas id="ct_chart"></canvas></div></div>
+  </div>
+  <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin-bottom:8px">소재 성과 순위 — Spend 대비 ROAS 기준</div>
+  <div class="tw"><table><thead><tr><th style="text-align:center">순위</th><th>소재명</th><th>타입</th><th>Spend</th><th>ROAS</th><th>VTA</th><th>BM</th><th>상태</th><th>비고</th></tr></thead><tbody><tr style="background:#1a1a1a"><td style="font-weight:900;color:#eeff53;text-align:center">1</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Video_fakead 시리즈</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Video_fakead_bearjelly / mo_cakehound_5Y / merge_Bbuild_fail 등</div></td><td><span style="color:#1D9E75;font-weight:700;font-size:11px">Video</span></td><td><b style="color:#f6f4f2">상</b></td><td><span class="badge bg">상</span></td><td style="color:#1D9E75;font-size:11px">O</td><td style="color:#eeff53;font-size:11px;font-weight:700">200%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">Spend 비중 최상위. 게임 플레이 흉내 포맷으로 CTR 및 클릭 의도 높음. 5주년 소재 포함.</td></tr><tr style="background:#1d1d1d"><td style="font-weight:900;color:#eeff53;text-align:center">2</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Video_ci / Video_battle</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Video_ci_3DoughCookies / ci_KDH / battle_beastraid_Unfathomable 등</div></td><td><span style="color:#1D9E75;font-weight:700;font-size:11px">Video</span></td><td><b style="color:#f6f4f2">상</b></td><td><span class="badge bg">상</span></td><td style="color:#1D9E75;font-size:11px">O</td><td style="color:#eeff53;font-size:11px;font-weight:700">200%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">게임플레이 핵심 영상 소재. 4/8 KDH 배치 포함. VT 적용으로 CT 기여도 우수.</td></tr><tr style="background:#1a1a1a"><td style="font-weight:900;color:#eeff53;text-align:center">3</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Video 신소재 (5월)</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Video_ingame_Timekeeper / ci_Timekeeper / product_titlevideo_Ebuild 등</div></td><td><span style="color:#1D9E75;font-weight:700;font-size:11px">Video</span></td><td><span style="color:#bfbda7">중-상</span></td><td><span class="badge bg">상</span></td><td style="color:#1D9E75;font-size:11px">O</td><td style="color:#eeff53;font-size:11px;font-weight:700">200%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">5/7 업데이트 연동 론칭. 직후 KR 175%·US 232% — H1 최고 성과 기록.</td></tr><tr style="background:#1d1d1d"><td style="font-weight:900;color:#eeff53;text-align:center">4</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Craftsman MultiVideo</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Craftsman_MultiVideo_KR / US</div></td><td><span style="color:#eeff53;font-weight:700;font-size:11px">Craftsman</span></td><td><span style="color:#888">중</span></td><td><span class="badge bp">최상(테스트)</span></td><td style="color:#1D9E75;font-size:11px">O</td><td style="color:#1D9E75;font-size:11px;font-weight:700">완료</td><td><span class="badge bg">완료</span></td><td style="font-size:11px;color:#555;line-height:1.6">Remerge 자체 제작 인터랙티브 소재. KR Uplift + US Power BM 실험(캠페인 60681) 완료. 결과 리뷰 후 전체 캠페인 확대 적용 예정.</td></tr><tr style="background:#1a1a1a"><td style="font-weight:900;color:#eeff53;text-align:center">5</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">5주년 이벤트 배치 (26개)</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">[5Y Anniversary Batch — 1/13 일괄 업로드]</div></td><td><span style="color:#888;font-weight:700;font-size:11px">Mixed</span></td><td><b style="color:#f6f4f2">상(이벤트)</b></td><td><span class="badge bg">상(이벤트)</span></td><td style="color:#e8c84a;font-size:11px">Video만</td><td style="color:#888;font-size:11px;font-weight:700">100%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">이벤트 기간 KR 155% ROAS 견인. 이벤트 종료 후 자연 감소.</td></tr><tr style="background:#1d1d1d"><td style="font-weight:900;color:#eeff53;text-align:center">6</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">KDH 업데이트 배치 (22개)</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Video_product_KDH / update_KDH / ci_KDH / Banner_reward_KDH 등</div></td><td><span style="color:#888;font-weight:700;font-size:11px">Mixed</span></td><td><span style="color:#bfbda7">중-상</span></td><td><span class="badge bg" style="opacity:.7">중-상</span></td><td style="color:#e8c84a;font-size:11px">Video만</td><td style="color:#888;font-size:11px;font-weight:700">100%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">4/8 iOS 재개 연동 신소재. 4/13 KR 119%·US 131% 성과 기여.</td></tr><tr style="background:#1a1a1a"><td style="font-weight:900;color:#eeff53;text-align:center">7</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Banner_character 시리즈</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Banner_character_DarkEnchantress / split_3DoughCookies / skin_split 등</div></td><td><span style="color:#d2c8ff;font-weight:700;font-size:11px">Banner</span></td><td><span style="color:#bfbda7">중-상</span></td><td><span class="badge ba">중</span></td><td style="color:#e8c84a;font-size:11px">조건부</td><td style="color:#888;font-size:11px;font-weight:700">100%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">Spend 비중 높으나 Video 대비 ROAS 낮음. CT 비율에 따라 VT 조정.</td></tr><tr style="background:#1d1d1d"><td style="font-weight:900;color:#eeff53;text-align:center">8</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Banner_reward / Banner_update</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Banner_reward_5Y / update_KDH / reward_Ebuild / update_Ebuild 등</div></td><td><span style="color:#d2c8ff;font-weight:700;font-size:11px">Banner</span></td><td><span style="color:#888">중</span></td><td><span class="badge ba">중</span></td><td style="color:#1D9E75;font-size:11px">O</td><td style="color:#888;font-size:11px;font-weight:700">100%</td><td><span class="badge bg">운영중</span></td><td style="font-size:11px;color:#555;line-height:1.6">이벤트 연계 Banner 소재. VT 포함. ROAS 평균 수준.</td></tr><tr style="background:#1a1a1a"><td style="font-weight:900;color:#eeff53;text-align:center">9</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Native 포맷 전체</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Native (전체)</div></td><td><span style="color:#e8c84a;font-weight:700;font-size:11px">Native</span></td><td><span style="color:#555">하</span></td><td><span class="badge br" style="opacity:.7">하</span></td><td style="color:#444;font-size:11px">X</td><td style="color:#888;font-size:11px;font-weight:700">40%</td><td><span class="badge ba">축소운영</span></td><td style="font-size:11px;color:#555;line-height:1.6">2/26 BM 40% 감소. In-stream/Square로 예산 재배분 진행.</td></tr><tr style="background:#1d1d1d"><td style="font-weight:900;color:#eeff53;text-align:center">10</td><td><div style="font-size:12px;font-weight:700;color:#f6f4f2">Playable 포맷 전체</div><div style="font-size:10px;color:#3a3a3a;margin-top:2px">Playable (전체)</div></td><td><span style="color:#D85A30;font-weight:700;font-size:11px">Playable</span></td><td><span style="color:#D85A30">최하</span></td><td><span class="badge br">최하</span></td><td style="color:#444;font-size:11px">X</td><td style="color:#D85A30;font-size:11px;font-weight:700">OFF</td><td><span class="badge br">비활성</span></td><td style="font-size:11px;color:#555;line-height:1.6">3/23 전면 비활성. 다수 실험에서 Video/Banner 대비 ROAS 일관 하위 확인.</td></tr></tbody></table></div>
+  <p class="note">* Spend/ROAS 수준은 티켓 코멘트 및 BM 설정 기반 정성 평가. 정확한 수치는 Pivot 참조 요망.</p>
+  <div class="divider" style="margin-top:16px"></div>
+  <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin-bottom:10px;margin-top:14px">
+    Template Ad Type 세부 분석 — SV vs Playable_Remerge
+    <span style="font-size:9px;background:#081510;color:#1D9E75;border:1px solid #1D9E7530;padding:1px 6px;border-radius:3px;margin-left:6px;font-weight:400">✓ 실데이터 — Pivot YTD 2026</span>
+  </div>
+
+  <div class="s2" style="margin-bottom:12px">
+    <div class="cw" style="margin-bottom:0">
+      <div style="font-size:10px;font-weight:700;color:#777;margin-bottom:10px">Ad Type별 Cost 비중 및 AP ROAS (YTD 2026)</div>
+      <canvas id="adtype_chart" height="130"></canvas>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin-bottom:8px">Template 소계 — SV vs Playable_Remerge</div>
+      <table>
+        <thead><tr><th>구분</th><th>라벨 수</th><th>Cost</th><th>AP ROAS</th><th>D7 ROAS</th><th>유저 수</th><th>평가</th></tr></thead>
+        <tbody>
+          <tr style="background:#1a1a1a">
+            <td><b style="color:#eeff53">SV (Small Video)</b></td>
+            <td style="color:#bfbda7">6개</td>
+            <td style="color:#1D9E75;font-weight:700">$29,637</td>
+            <td style="color:#1D9E75;font-weight:700">4.36×</td>
+            <td style="color:#1D9E75;font-weight:700">3.11×</td>
+            <td style="color:#888">247,993</td>
+            <td><span class="badge bg">✓ 유효</span></td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td><b style="color:#e8c84a">Playable_Remerge</b></td>
+            <td style="color:#555">2개</td>
+            <td style="color:#e8c84a">$1,000</td>
+            <td style="color:#D85A30">0.16×</td>
+            <td style="color:#D85A30">0.06×</td>
+            <td style="color:#888">49,108</td>
+            <td><span class="badge ba">⚠ 저성과</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin:12px 0 8px">SV 개별 라벨 성과 (Cost 순)</div>
+      <table>
+        <thead><tr><th>Ad Label</th><th>Cost</th><th>AP ROAS</th><th>D7 ROAS</th><th>유저 수</th></tr></thead>
+        <tbody>
+          <tr style="background:#1a1a1a">
+            <td style="font-size:11px;color:#f6f4f2">SV_ci_doughael_seltzer_menthol_KR</td>
+            <td style="color:#1D9E75;font-weight:700">$13,114</td>
+            <td style="color:#1D9E75">1.46×</td>
+            <td style="color:#888">0.73×</td>
+            <td style="color:#888">65,173</td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td style="font-size:11px;color:#f6f4f2">SV_ci_legendaryskin_virtualworlds_EN</td>
+            <td style="color:#1D9E75">$9,485</td>
+            <td style="color:#D85A30">0.48×</td>
+            <td style="color:#D85A30">0.26×</td>
+            <td style="color:#888">61,178</td>
+          </tr>
+          <tr style="background:#1a1a1a">
+            <td style="font-size:11px;color:#f6f4f2">SV_ci_legendaryskin_virtualworlds_KR</td>
+            <td style="color:#e8c84a">$5,700</td>
+            <td style="color:#1D9E75">1.23×</td>
+            <td style="color:#888">0.59×</td>
+            <td style="color:#888">82,037</td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td style="font-size:11px;color:#f6f4f2">SV_Video_ci_legendaryskin_Timekeeper_KR</td>
+            <td style="color:#888">$1,258</td>
+            <td style="color:#D85A30">0.28×</td>
+            <td style="color:#D85A30">0.28×</td>
+            <td style="color:#888">21,063</td>
+          </tr>
+          <tr style="background:#1a1a1a">
+            <td style="font-size:11px;color:#f6f4f2">SV_Video_reward_silentsalt_EN</td>
+            <td style="color:#555">$70</td>
+            <td style="color:#1D9E75">5.01×</td>
+            <td style="color:#888">0.30×</td>
+            <td style="color:#555">7,724</td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td style="font-size:11px;color:#f6f4f2">SV_Video_product_titlevideo_Fbuild_KR</td>
+            <td style="color:#555">$10</td>
+            <td style="color:#1D9E75">17.72×</td>
+            <td style="color:#1D9E75">16.48×</td>
+            <td style="color:#555">10,818</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-size:10px;font-weight:700;color:#444;text-transform:uppercase;margin:12px 0 8px">Playable_Remerge 개별 라벨</div>
+      <table>
+        <thead><tr><th>Ad Label</th><th>Cost</th><th>AP ROAS</th><th>D7 ROAS</th><th>유저 수</th></tr></thead>
+        <tbody>
+          <tr style="background:#1a1a1a">
+            <td style="font-size:11px;color:#f6f4f2">Video_character_split_3DoughCookies_playable_remerge_US</td>
+            <td style="color:#e8c84a">$654</td>
+            <td style="color:#D85A30">0.22×</td>
+            <td style="color:#D85A30">0.12×</td>
+            <td style="color:#888">23,621</td>
+          </tr>
+          <tr style="background:#1d1d1d">
+            <td style="font-size:11px;color:#f6f4f2">Video_character_split_3DoughCookies_playable_remerge_KR</td>
+            <td style="color:#888">$347</td>
+            <td style="color:#D85A30">0.11×</td>
+            <td style="color:#D85A30">0.00×</td>
+            <td style="color:#888">25,487</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="s2" style="margin-top:4px">
+    <div class="ins">
+      <strong>SV (Small Video) 인사이트:</strong> YTD 기준 SV 6개 라벨이 $29,637 매출 기여. AP ROAS 평균 4.36×로 전체 Ad Type 중 <strong>최상위</strong>. 상위 3개(<code style="color:#eeff53;font-size:10px">doughael_menthol_KR</code> $13.1K · <code style="color:#eeff53;font-size:10px">virtualworlds_EN</code> $9.5K · <code style="color:#eeff53;font-size:10px">virtualworlds_KR</code> $5.7K)이 전체 SV 매출의 95% 점유. 단, D7 ROAS는 0.3~0.7× 수준으로 초기 전환 후 유지율 개선 여지 있음. 소규모이지만 <code style="color:#eeff53;font-size:10px">Fbuild_KR</code>의 AP ROAS 17.72×는 주목할 만한 효율.
+    </div>
+    <div class="ins w">
+      <strong>Playable_Remerge 인사이트:</strong> KR·US 합산 $1,000 매출이나 AP ROAS 0.16×, D7 ROAS 0.06× — KPI 대비 크게 하회. 49,108명에게 도달했으나 전환 효율이 낮음. 일반 Playable(3/23 비활성)과 마찬가지로 <strong>운영 지속 여부 재검토 필요.</strong>
+    </div>
+  </div>
+
+<div class="sec">
+  <div class="sec-t"><span class="n">4</span> iOS 캠페인 현황</div>
+  <div class="s4">
+    <div class="stat b-gr"><div class="sl">iOS 재개일</div><div class="sv" style="font-size:14px;color:#fff">2026.04.08</div><div class="ss">KR+US iOS 동시 재개 · KDH 업데이트 연동</div></div>
+    <div class="stat b-gr"><div class="sl">US iOS 피크 (4/27)</div><div class="sv c-gr">124%</div><div class="ss">주간 누적 ROAS · KPI 대폭 상회</div></div>
+    <div class="stat b-rd"><div class="sl">KR iOS</div><div class="sv c-rd">부진</div><div class="ss">오가닉 약세 + 경쟁사 어트리뷰션 선점. 크레딧 소진 후 종료 검토</div></div>
+    <div class="stat b-am"><div class="sl">어트리뷰션</div><div class="sv c-yw">IDFV</div><div class="ss">ID매칭 방식 · 기술적 차이 없음</div></div>
+  </div>
+  <div class="s2">
+    <div class="ins"><strong>US iOS:</strong> 재개 직후부터 안정적 성과 (4/13 63%→4/27 124%). CPI 기준 파트너 중 중간 순위로 경쟁력 확인. <strong>US iOS 안정적 운영 유지 권고.</strong></div>
+    <div class="ins w"><strong>KR iOS:</strong> 오가닉 구매 중 Remerge 기여 0.03% 수준으로 구조적 한계 확인. 크레딧($10,000) 소진 후 Q3 오가닉 회복 시점에 재개 여부 재검토 예정.</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-t"><span class="n">5</span> Q3 협력 제안</div>
+  <div class="p-row"><div class="p-num">1</div><div class="p-body p-h">
+    <div class="p-title">Q3 게임 업데이트 일정 사전 공유</div>
+    <div class="p-sub">오가닉 피크와 ROAS의 상관관계가 H1 전체에서 일관되게 확인되었습니다. 업데이트 일정을 3~5일 전에 공유해 주시면 예산·입찰가를 사전 조정하여 피크 효과를 극대화할 수 있습니다. 오가닉 주간 €2M 초과를 예산 확대 기준으로 활용할 예정입니다.</div>
+  </div></div>
+  
+  <div class="p-row"><div class="p-num">2</div><div class="p-body p-m">
+    <div class="p-title">KR iOS Q3 재개 조건 사전 협의</div>
+    <div class="p-sub">Q3 오가닉 회복 시점 및 주요 업데이트 일정에 맞춰 KR iOS 재개 조건을 사전에 논의드리겠습니다.</div>
+  </div></div>
+  <div class="p-row"><div class="p-num">3</div><div class="p-body p-m">
+    <div class="p-title">신규 소재 업로드 일정 사전 공유</div>
+    <div class="p-sub">5/7 신소재 론칭 직후 KR 175%·US 232% 사례처럼, 신규 소재와 업데이트 연동 시 효과가 극대화됩니다. 소재 준비 일정을 미리 공유해 주시면 캠페인 설정을 병행 준비하겠습니다.</div>
+  </div></div>
+  <p class="note" style="margin-top:14px">데이터 출처: AO-34079 티켓 코멘트 (2026.01~06 전수) · AppsFlyer 오가닉 Export · 작성일: 2026.06.23</p>
+</div>
+
+</div>
+<script>
+Chart.defaults.color="#444";Chart.defaults.borderColor="#222";
+const TT={backgroundColor:"rgba(14,14,14,.97)",borderColor:"#2a2a2a",borderWidth:1,titleColor:"#eeff53",bodyColor:"#f6f4f2",padding:10};
+const oL=["12/29", "01/05", "01/12", "01/19", "01/26", "02/02", "02/09", "02/16", "02/23", "03/02", "03/09", "03/16", "03/23", "03/30", "04/06", "04/13", "04/20", "04/27", "05/04", "05/11", "05/18", "05/25", "06/01", "06/08", "06/15"];const oR=[552.5, 817.5, 4014.4, 2355.3, 1809.5, 1295.4, 2244.6, 1566.3, 1123.0, 910.1, 2301.2, 923.0, 908.1, 926.8, 3165.6, 1591.9, 1043.4, 1044.2, 1971.2, 1136.3, 933.4, 743.8, 1457.8, 780.6, 728.4];
+const iU=[9667, 12514, 49558, 27813, 22253, 16359, 31487, 19006, 12823, 10190, 31549, 13653, 14681, 14779, 44306, 22293, 16215, 15971, 39239, 17755, 13170, 10069, 19933, 10194, 8594];const aU=[20235, 26340, 108166, 65620, 53070, 36572, 70080, 42860, 27334, 20691, 63183, 25360, 27373, 26542, 86075, 44027, 33197, 33117, 27306, 32997, 30408, 22653, 44035, 23112, 18897];
+const pL=["1/8", "1/12", "1/15", "1/19", "1/22", "2/2", "2/5", "2/9", "2/12", "2/23", "2/26", "3/3", "3/9", "3/12", "3/16", "3/19", "3/23", "3/30", "4/2", "4/3", "4/9", "4/13", "4/22", "4/24", "4/27", "5/7", "5/18", "5/21", "5/26", "5/28", "6/1", "6/4", "6/8", "6/11", "6/15", "6/18", "6/22"];const kC=[70, 37, 155, 137, 68, 24, 23, 31, 37, 24, 13, 34, 32, 62, 59, 30.5, 14, 16.2, 18, 44, 93, 119, 36, 20, 28, 175, 48, 48, 35, 20, 19, 24, 47, 50, 31, 19.5, 12];const uC=[50, 32, 58, 62, 39, 27, 27, 19.5, 20.6, 25, 23, 17, 19, 36, 42, 30.4, 13.4, 26.3, 33, 35, 70, 131, 42, 60, 137, 232, 99, 72, 53, 43, 34, 30, 90, 43, 36, null, 24];
+const oKR=[null, null, 155, 137, 68, 24, null, 37, 24, 34, 32, 59, 14, 16.2, 18, 44, 93, 119, 36, 20, 28, 175, 48, 48, 35, 20, 19, 24, 47, 50, 31, 19.5, 12];const oUS=[null, null, 58, 62, 39, 27, null, 20.6, 25, 17, 19, 42, 13.4, 26.3, 33, 35, 70, 131, 42, 60, 137, 232, 99, 72, 53, 43, 34, 30, 90, 43, 36, null, 24];
+
+new Chart(document.getElementById("roas_chart"),{type:"line",data:{labels:pL,datasets:[
+  {label:"KR",data:kC,borderColor:"#3DDC84",backgroundColor:"rgba(61,220,132,.07)",borderWidth:2.5,pointRadius:3.5,pointBackgroundColor:kC.map(v=>v==null?'transparent':v>=19?"#3DDC84":"#D85A30"),tension:.35,fill:true,spanGaps:true},
+  {label:"US",data:uC,borderColor:"#d2c8ff",backgroundColor:"rgba(210,200,255,.05)",borderWidth:2,pointRadius:3,pointBackgroundColor:uC.map(v=>v==null?'transparent':v>=15?"#d2c8ff":"#D85A30"),tension:.35,fill:true,spanGaps:true},
+  {label:"KR KPI",data:Array(pL.length).fill(19),borderColor:"rgba(61,220,132,.18)",borderDash:[6,4],borderWidth:1.5,pointRadius:0},
+  {label:"US KPI",data:Array(pL.length).fill(15),borderColor:"rgba(210,200,255,.14)",borderDash:[4,4],borderWidth:1.5,pointRadius:0}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},scales:{x:{grid:{color:"#1a1a1a"},ticks:{color:"#3a3a3a",maxRotation:45,font:{size:9}}},y:{grid:{color:"#1e1e1e"},ticks:{color:"#444",callback:v=>v+"%"},beginAtZero:true}}}});
+
+new Chart(document.getElementById("organic_chart"),{type:"bar",data:{labels:oL,datasets:[
+  {type:"bar",label:"오가닉 매출",data:oR,backgroundColor:oR.map(v=>v>=2000?"rgba(210,200,255,.6)":v>=1000?"rgba(210,200,255,.27)":"rgba(210,200,255,.1)"),borderColor:oR.map(v=>v>=2000?"#d2c8ff":"rgba(210,200,255,.18)"),borderWidth:1,yAxisID:"y"},
+  {type:"line",label:"KR ROAS",data:oKR,borderColor:"#3DDC84",backgroundColor:"transparent",borderWidth:2,pointRadius:3,pointBackgroundColor:"#3DDC84",tension:.4,spanGaps:true,yAxisID:"y2"},
+  {type:"line",label:"US ROAS",data:oUS,borderColor:"#e8c84a",borderDash:[5,3],backgroundColor:"transparent",borderWidth:1.5,pointRadius:2,tension:.4,spanGaps:true,yAxisID:"y2"}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},scales:{x:{grid:{color:"#1a1a1a"},ticks:{color:"#3a3a3a",maxRotation:45,font:{size:9}}},y:{grid:{color:"#1e1e1e"},ticks:{color:"#777",callback:v=>"€"+v+"K"},position:"left",beginAtZero:true},y2:{grid:{display:false},ticks:{color:"#3DDC84",font:{size:9},callback:v=>v+"%"},position:"right",beginAtZero:true}}}});
+
+new Chart(document.getElementById("users_chart"),{type:"bar",data:{labels:oL,datasets:[
+  {label:"iOS",data:iU,backgroundColor:"rgba(210,200,255,.4)",borderColor:"#d2c8ff",borderWidth:1,stack:"s"},
+  {label:"Android",data:aU,backgroundColor:"rgba(61,220,132,.38)",borderColor:"#3DDC84",borderWidth:1,stack:"s"}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},scales:{x:{grid:{color:"#1a1a1a"},ticks:{color:"#3a3a3a",maxRotation:45,font:{size:9}}},y:{grid:{color:"#1e1e1e"},stacked:true,ticks:{color:"#444",callback:v=>v>=1000?(v/1000).toFixed(0)+"K":v}}}}});
+
+const ctL=["1/8","1/15","2/23","3/16","3/19","3/26","3/30","4/22"];
+const ctK=[51,78,71,54,44,82,88,83];const ctU=[67,76,84,75,61,82,90,87];
+new Chart(document.getElementById("ct_chart"),{type:"line",data:{labels:ctL,datasets:[
+  {label:"KR CT%",data:ctK,borderColor:"#3DDC84",backgroundColor:"rgba(61,220,132,.08)",borderWidth:2,pointRadius:4,pointBackgroundColor:ctK.map(v=>v>=70?"#3DDC84":"#D85A30"),tension:.3},
+  {label:"US CT%",data:ctU,borderColor:"#d2c8ff",backgroundColor:"rgba(210,200,255,.06)",borderWidth:2,pointRadius:3.5,pointBackgroundColor:ctU.map(v=>v>=70?"#d2c8ff":"#D85A30"),tension:.3},
+  {label:"목표",data:Array(ctL.length).fill(70),borderColor:"rgba(238,255,83,.25)",borderDash:[5,4],borderWidth:1.5,pointRadius:0}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},scales:{x:{grid:{color:"#1a1a1a"},ticks:{color:"#3a3a3a",font:{size:9}}},y:{grid:{color:"#1e1e1e"},ticks:{color:"#444",callback:v=>v+"%"},min:30,max:100}}}});
+
+// Ad Type 차트
+const atLabels = ['Native', 'Video', 'Image', 'Template(SV+PR)'];
+const atRev    = [43139, 32704, 31475, 4608];
+const atRoas   = [1.33, 1.57, 1.89, 3.56];
+const atColors = ['rgba(210,200,255,.55)','rgba(61,220,132,.55)','rgba(238,255,83,.45)','rgba(232,200,74,.55)'];
+const atBorder = ['#d2c8ff','#3DDC84','#eeff53','#e8c84a'];
+new Chart(document.getElementById("adtype_chart"),{type:"bar",data:{labels:atLabels,datasets:[
+  {label:"Cost ($)",data:atRev,backgroundColor:atColors,borderColor:atBorder,borderWidth:1,yAxisID:"y"},
+  {type:"line",label:"AP ROAS (×)",data:atRoas,borderColor:"#eeff53",backgroundColor:"transparent",borderWidth:2,pointRadius:5,pointBackgroundColor:"#eeff53",yAxisID:"y2"}
+]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{...TT}},
+  scales:{
+    x:{grid:{color:"#1a1a1a"},ticks:{color:"#555",font:{size:10}}},
+    y:{grid:{color:"#1e1e1e"},ticks:{color:"#777",callback:v=>"$"+v.toLocaleString()},position:"left",beginAtZero:true},
+    y2:{grid:{display:false},ticks:{color:"#eeff53",font:{size:9},callback:v=>v+"×"},position:"right",beginAtZero:true}
+  }
+}});
+
+</script></body></html>
